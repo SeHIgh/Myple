@@ -30,7 +30,7 @@ li {
 /* BODY */
 body{
     width: 100%;
-    height: 400vh;
+    height: auto;
     
     background-color: #F5F5F5;
 
