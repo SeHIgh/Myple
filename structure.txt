@@ -1,0 +1,39 @@
+project-root/
+├── config.json               # 설정 파일
+├── docs/                     # GitHub Pages 루트 폴더
+│   ├── index.html            # 메인 HTML 파일
+│   ├── pages/                # HTML 페이지 폴더
+│   │   ├── about.html        # about 페이지
+│   │   ├── contact.html      # contact 페이지
+│   │   ├── services.html     # services 페이지
+│   │   └── ...               # 추가 HTML 페이지
+│   ├── layouts/              # layout HTML 파일 폴더
+│   │   ├── header.html       # 헤더 섹션
+│   │   ├── footer.html       # 푸터 섹션
+│   │   └── ...               # 추가 섹션
+│   ├── assets/               # 자산 파일
+│   │   ├── css/              # CSS 파일 폴더
+│   │   │   ├── main.css      # 메인 CSS 파일
+│   │   │   ├── reset.css     # 리셋 CSS 파일
+│   │   │   └── ...           # 추가 CSS 파일
+│   │   ├── js/               # JavaScript 파일 폴더
+│   │   │   ├── main.js       # 메인 JavaScript 파일
+│   │   │   ├── helper.js     # 보조 JavaScript 파일
+│   │   │   └── ...           # 추가 JavaScript 파일
+│   │   ├── images/           # 이미지 파일 폴더
+│   │   │   ├── logo.png      # 로고 이미지 파일
+│   │   │   └── ...           # 추가 이미지 파일
+│   │   ├── fonts/            # 폰트 파일 폴더
+│   │   │   ├── custom-font.woff # 커스텀 폰트 파일
+│   │   │   └── ...           # 추가 폰트 파일
+│   │   ├── libs/             # 라이브러리 파일 폴더
+│   │   │   ├── jquery.min.js # 예시로 jQuery 파일
+│   │   │   └── ...           # 추가 라이브러리 파일
+│   │   └── api/              # API 요청 처리 파일 폴더
+│   │       ├── api.js        # API 요청 처리 파일
+│   │       ├── userApi.js    # 사용자 관련 API 파일
+│   │       └── ...           # 추가 API 파일
+│   └── 404.html              # 커스텀 404 페이지
+├── .gitignore                # Git 무시 파일 목록
+├── README.md                 # 프로젝트 설명서
+└── LICENSE                   # 라이선스 파일
