@@ -1,0 +1,110 @@
+@import url(./layouts.css);
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section1{
+    width: 60%;
+    height: 70vh;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    background-color: #f5f5f5;
+
+    border: 2px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 gray;
+}
+#section1 .Logo{
+    width: 110px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+#section1 .title{
+    font-size: 26px;
+    font-weight: 600;
+    color: #000000;
+}
+#section1 .desc{
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+}
+#section1 .input-box{
+    width: 35%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #FFCC33;
+    border: 2px solid #000000;
+    box-shadow: 0 0 5px 0 gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#section1 .input-box input{
+    width: 85%;
+    height: 100%;
+    padding: 0 5px;
+    background-color: transparent;
+
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+#section1 .input-box:hover{
+    background-color: #ffc519;
+}
+#section1 .input-box input:focus{
+    outline: none;
+}
+
+#section1 .input-box button{
+    width: 10%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000000;
+    font-size: 18px;
+
+    cursor: pointer;
+}
+#section1 #result{
+    font-size: 16px;
+    color: #000000;
+    margin: 0;
+}
+
+#section1 .character-preview{
+    width: 65%;
+    height: 500px;
+
+    border-top: 2px solid #000000;
+    padding: 0 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
