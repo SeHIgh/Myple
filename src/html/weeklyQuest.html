@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미드나잇 체이서 도우미</title>
+    <link rel="stylesheet" href="../css/MidnightChaser.css">
+</head>
+
+<body>
+    <header>
+        <figure class="Logo"><a href="./main.html"><img src="../../images/logos/Myple_Logo.png" alt="Logo"></a></figure>
+        <!-- for MENU UI -->
+        <div class="header-frame">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li class="active"><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title-cont">
+            <div class="title-box"><img src="../../images/midnightChaser/midnightChaser.hint.clear.0.png" alt="logo">
+                <h1 class="title">미드나잇 체이서 도우미</h1>
+            </div>
+            <div class="cnt-cont">
+                <div class="cnt-txt">
+                    <img src="../../images/midnightChaser/midnightChaser.field.clear.png" alt="check">
+                    <h1 class="stage">찾은개수</h1>
+                </div>
+                <div class="cnt-inner">
+                    <h1 class="timer"> 4<span>개</span> / 9<span>개</span></h1>
+                </div>
+            </div>
+        </div>
+        <div class="board">
+            <h1>BOARD</h1>
+            <div class="board_inner">
+                <div class="grid-cont">
+                    <div class="obj_box" id="select-1"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-2"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-3"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-4"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-5"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-6"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-7"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-8"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                    <div class="obj_box" id="select-9"><img src="../../images/midnightChaser/midnightChaser.hint.hide.0.png"
+                            alt="?"></div>
+                </div>
+            </div>
+        </div>
+        <aside>
+            <div class="objList">
+                <div class="board_inner">
+                    <div class="flex-cont">
+                        <div class="obj_box" data-index="1"><img src="../../images/midnightChaser/midnightChaser.hint.object.0.png"
+                                alt="0"></div>
+                        <div class="obj_box" data-index="2"><img src="../../images/midnightChaser/midnightChaser.hint.object.1.png"
+                                alt="1"></div>
+                        <div class="obj_box" data-index="3"><img src="../../images/midnightChaser/midnightChaser.hint.object.2.png"
+                                alt="2"></div>
+                        <div class="obj_box" data-index="4"><img src="../../images/midnightChaser/midnightChaser.hint.object.3.png"
+                                alt="3"></div>
+                        <div class="obj_box" data-index="5"><img src="../../images/midnightChaser/midnightChaser.hint.object.4.png"
+                                alt="4"></div>
+                        <div class="obj_box" data-index="6"><img src="../../images/midnightChaser/midnightChaser.hint.object.5.png"
+                                alt="5"></div>
+                        <div class="obj_box" data-index="7"><img src="../../images/midnightChaser/midnightChaser.hint.object.6.png"
+                                alt="6"></div>
+                        <div class="obj_box" data-index="8"><img src="../../images/midnightChaser/midnightChaser.hint.object.7.png"
+                                alt="7"></div>
+                        <div class="obj_box" data-index="9"><img src="../../images/midnightChaser/midnightChaser.hint.object.8.png"
+                                alt="8"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+    <footer>
+        <!-- empty box / footer-left -->
+        <div class="empty-box"></div>
+        <!-- profile box (체력상태창) -->
+        <div class="main-box">
+            <div class="text-box">
+                <p class="lv">Lv.265</p>
+                <p class="name">콩쁩</p>
+            </div>
+            <div class="bar-box">
+                <div class="mini-box">
+                    <p class="text">HP</p>
+                    <div class="HP">
+                        <p>36472/36472</p>
+                    </div>
+                </div>
+                <div class="mini-box">
+                    <p class="text">MP</p>
+                    <div class="MP">
+                        <p>75880/75880</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu box / footer-right-->
+        <section class="nav">
+            <button class="nav_toggle" data-target="character"><i class="fa-solid fa-user"></i></button>
+            <button class="nav_toggle" data-target="setting"><i class="fa-solid fa-gear"></i></button>
+            <button class="nav_toggle" data-target="menu"><i class="fa-solid fa-bars"></i></button>
+
+            <nav id="nav_menu">
+                <div id="character" class="menu-content hidden">
+                    <h1>CHARACTER</h1>
+                    <ul>
+                        <li><a href="./main.html">캐릭터 정보</a></li>
+                        <li><a href="#">스킬</a></li>
+                        <li><a href="#">아이템</a></li>
+                        <li><a href="#">길라잡이</a></li>
+                    </ul>
+                </div>
+                <div id="setting" class="menu-content hidden">
+                    <h1>SETTING</h1>
+                    <ul>
+                        <li><a href="#">계정 정보</a></li>
+                        <li><a href="#">옵션</a></li>
+                    </ul>
+                </div>
+                <div id="menu" class="menu-content hidden">
+                    <h1>MENU</h1>
+                    <ul>
+                        <li><a href="./weeklyQuest.html">주간퀘스트</a></li>
+                        <li><a href="./union.html">메이플 유니온</a></li>
+                        <li><a href="#services">코디</a></li>
+                        <li><a href="#contact">문의하기</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </footer>
+    <!-- JS파일 참조 -->
+    <script src="../js/MidnightChaser.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://kit.fontawesome.com/47a5d4bea1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
