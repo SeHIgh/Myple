@@ -1,28 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 
+/* BASIC */
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-}
-
-ul, li {
-    list-style: none;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 img {
     display: block;
-    width: 100%;
-    height: auto;
+    max-width: 100%;
 }
 
+figure {
+    width: fit-content;
+    height: fit-content;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/* BODY */
 body{
     width: 100%;
-    height: 100vh;
+    height: 400vh;
     
     background-color: #F5F5F5;
 
@@ -31,9 +39,12 @@ body{
     font-style: normal;
     font-size: 14px;
 }
-/* HEADER */
+
+/* HEADER - FIXED UI */
 header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 70px;
     min-height: 70px;
@@ -163,17 +174,17 @@ header>.header-frame>.bottom {
     transform: scale(1.1);
 }
 
-/* Active state */
+/* HEADER - Active state */
 .header-nav>ul>li.active a {
-    color: #F5F5F5;
-    transform: scale(1.1);
+    color: #F68500;
+    transform: scale(1.2);
 }
 
-
-/* main */
+/* MAIN */
 main{
     width: 100%;
-    height: calc(100vh - 70px); /* 70px: header height */
+    /* main내부 section이 차지하는 공간 만큼 */
+    height: auto;
     background-color: #FFCC32;
 }
 
@@ -186,7 +197,7 @@ main section{
     align-items: center;
 }
 
-/* footer - FIXED UI */
+/* FOOTER / FIXED UI */
 
 footer{
     position: fixed;
@@ -206,13 +217,13 @@ footer{
     z-index: 100;
 }
 
-/* EMPTY BOX */
+/* FOOTER - EMPTY BOX */
 footer>.empty-box{
     min-width: 145px;
     height: 100%;
 }
 
-/* PROFILE UI */
+/* FOOTER - PROFILE UI */
 .main-box {
     /* position: fixed;
     bottom: 20px;
@@ -324,7 +335,7 @@ footer>.empty-box{
     align-items: center;
 }
 
-/* NAVIGATOR UI */
+/* FOOTER - NAVIGATOR UI */
 .nav{
     position: relative;
 
@@ -338,7 +349,7 @@ footer>.empty-box{
     gap: 5px;
 }
 
-/* NAVIGATOR MENU UI */
+/* FOOTER - NAVIGATOR MENU UI */
 #nav_menu {
     /* 버튼 3개 들어갈 만한 크기 */
     /* 45px * 3 + 5px * 2 (margin) = 135 + 10 = 145px */
@@ -392,7 +403,7 @@ footer>.empty-box{
     color: white;
     text-decoration: none;
 }
-/* hover시 상호작용 */
+/* FOOTER - hover시 상호작용 */
 #nav_menu li:hover {
     transform: scale(1.1);
 }
@@ -406,7 +417,7 @@ footer>.empty-box{
     /* Adjust according to the content height */
 }
 
-/* NAV BUTTON UI */
+/* FOOTER - NAV BUTTON UI */
 .nav_toggle{
     min-width: 45px;
     min-height: 45px;
@@ -424,7 +435,7 @@ footer>.empty-box{
 .nav_toggle:last-child i{
     font-size: 30px;
 }
-/* hidden class for menu content */
+/* FOOTER -  hidden class for menu content */
 .hidden {
     display: none;
 }
