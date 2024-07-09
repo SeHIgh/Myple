@@ -28,7 +28,7 @@ main{
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
-    transition: 0.5s ease-in;
+    transition: 0.2s ease;
 }
 
 #section1 .login-box {
@@ -111,6 +111,8 @@ main{
 
 /* 캐릭터 미리보기 (확인용) */
 #character-preview{
+    position : relative;
+
     width: 40%;
     height: 100%;
 
@@ -123,10 +125,13 @@ main{
     align-items: center;
 
     gap: 10px;
-
-    transition: 1s ease-in;
 }
 #character-preview #nextBtn{
+    position : absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+
     width: 25px;
     height: 25px;
 
@@ -135,6 +140,9 @@ main{
     border: none;
 
     cursor: pointer;
+}
+#character-preview #nextBtn:hover{
+    transform: scale(1.2) translateY(-44%);
 }
 #character-preview #nextBtn i { 
     font-size: 25px;
