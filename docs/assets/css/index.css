@@ -10,75 +10,85 @@ main{
 }
 
 #section1{
-    width: 60%;
-    height: 70vh;
+    width: auto;
+    max-width: 700px;
+    height: 50vh;
+    min-height: 300px;
 
-    padding: 40px;
+    padding: 50px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 15px;
-
-    background-color: #f5f5f5;
-
-    border: 2px solid #000000;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 gray;
-}
-#section1 .Logo{
-    width: 110px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 200;
-}
-#section1 .title{
-    font-size: 26px;
-    font-weight: 600;
-    color: #000000;
-}
-#section1 .desc{
-    font-size: 14px;
-    font-weight: 600;
-    color: gray;
-}
-#section1 .input-box{
-    width: 35%;
-    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
+    background-color: #f5f5f5;
+
+    border: 2.5px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    transition: 0.5s ease-in;
+}
+
+#section1 .login-box {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#section1 .login-box .txt-box {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#section1 .login-box .input-box {
+    min-width: 200px;
+    padding-right: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+
     background-color: #FFCC33;
     border: 2px solid #000000;
-    box-shadow: 0 0 5px 0 gray;
-    border-radius: 5px;
-    padding: 5px;
+
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-#section1 .input-box input{
-    width: 85%;
-    height: 100%;
-    padding: 0 5px;
+#section1 .login-box .input-box input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
     background-color: transparent;
+    text-align: center;
+    font-size: 14px;
 
     border: none;
-    text-align: center;
-    font-size: 16px;
-}
-#section1 .input-box:hover{
-    background-color: #ffc519;
-}
-#section1 .input-box input:focus{
-    outline: none;
 }
 
-#section1 .input-box button{
+#section1 .login-box .input-box:hover {
+    background-color: #F0C030;
+}
+
+#section1 .login-box .input-box input:focus {
+    outline: none;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#section1 .login-box .input-box button{
     width: 10%;
     height: 100%;
     padding: 0;
@@ -91,20 +101,124 @@ main{
     cursor: pointer;
 }
 #section1 #result{
-    font-size: 16px;
-    color: #000000;
-    margin: 0;
+    height: 10px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
 }
 
-#section1 .character-preview{
-    width: 65%;
-    height: 500px;
 
-    border-top: 2px solid #000000;
+/* 캐릭터 미리보기 (확인용) */
+#character-preview{
+    width: 40%;
+    height: 100%;
+
+    border-left: 2px solid #000000;
     padding: 0 10px;
 
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: 1s ease-in;
+}
+#character-preview #nextBtn{
+    width: 25px;
+    height: 25px;
+
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+#character-preview #nextBtn i { 
+    font-size: 25px;
+
+    background-color: transparent;
+
+    border: none;
+}
+/* like. 사원증 */
+#character-preview #character-info-box{
+    width: 80%;
+    aspect-ratio: 1/1.5; /* 1:1.5 비율 */
+    padding: 10px;
+
+    border: 2px solid #000000;
+    border-radius: 10px;
+
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+}
+#character-preview #character-info-box .character-prev-world{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
+#character-preview #character-info-box .character-prev-world img{
+    width: 18px;
+    height: auto;
+    margin-right: 5px;
+    filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
+}
+
+#character-preview #character-info-box .character-prev-img{
+    width: 80%;
+    aspect-ratio: 1/1; /* 1:1 비율 (정사각형) */
+
+    border: 2.5px solid #000000;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: lightgray;
+    overflow: hidden;
+    padding-top: 15%;
+
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+#character-preview #character-info-box .character-prev-img img{
+    background-color: transparent;
+    scale: 2.0;
+}
+
+#character-preview #character-info-box .character-prev-name{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+#character-preview #character-info-box .character-prev-job{
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+#character-preview #character-info-box .character-prev-level{
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+#character-preview #character-info-box .character-prev-level i{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: transparent;
+    text-shadow: none;
+}
+
