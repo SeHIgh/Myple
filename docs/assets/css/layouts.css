@@ -131,7 +131,7 @@ header>.header-frame>.bottom {
     justify-content: center;
     align-items: center;
 
-    z-index: 500;
+    z-index: 200;
 }
 
 .header-nav>ul {
