@@ -65,20 +65,20 @@ async function lookupCharacterInfo() {
 
     // 스타일을 개별적으로 설정하여 transition 효과 적용
     const section1 = document.getElementById("section1");
-    section1.style.transition = "all 1s ease-in-out";
+    section1.style.transition = "all 0.6s ease-in-out";
     section1.style.width = "50%";
     section1.style.padding = "50px 0";
     await delay(100);
 
     const characterPreview = document.getElementById("character-preview");
-    characterPreview.style.transition = "all 1s ease-in-out";
+    // characterPreview.style.transition = "all 0.5s ease-in-out";
     characterPreview.style.display = "flex";
-    await delay(500);
+    await delay(350);
 
     const characterInfo = document.getElementById("character-info-box");
-    characterInfo.style.transition = "all 1s ease-in-out";
+    // characterInfo.style.transition = "all 1s ease-in-out";
     characterInfo.style.display = "flex";
-    await delay(500);
+    // await delay(500);
 
     // 캐릭터 정보 표시
     document.getElementById("characterImgResult").src = data.character_image;
@@ -96,10 +96,10 @@ async function lookupCharacterInfo() {
     const lvElement = document.getElementById("lv");
     lvElement.style.color = "black";
     document.getElementById("levelResult").innerText = data.character_level;
-    await delay(500);
+    await delay(350);
 
     const nextBtn = document.getElementById("nextBtn");
-    nextBtn.style.transition = "all 1s ease-in-out";
+    nextBtn.style.transition = "all 0.4s ease";
     nextBtn.style.display = "block";
   } catch (error) {
     document.getElementById("characterNameResult").innerText = ``;
