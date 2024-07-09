@@ -1,33 +1,41 @@
-// Function to include HTML files
+// Async function to fetch API key
+async function getApiKey() {
+  try {
+    const response = await fetch("../config.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch API key");
+    }
+    const config = await response.json();
+    return config.maple_apiKey;
+  } catch (error) {
+    console.error("Error fetching API key:", error);
+    return null;
+  }
+}
+
+// Function to include HTML files with callback
 async function includeHTML(id, url, callback) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error('Failed to load HTML');
+      throw new Error("Failed to load HTML");
     }
     const data = await response.text();
     document.getElementById(id).innerHTML = data;
-    if (callback) callback();
+    if (callback) callback(); // Callback function execution
   } catch (error) {
-    console.error('Error loading HTML:', error);
+    console.error("Error loading HTML:", error);
   }
 }
 
-initializeHeaderFunctions();
-// Include sections and initialize functionality after inclusion
-includeHTML(
-  'footer-placeholder',
-  '../layouts/footer.html',
-  initializeFooterFunctions
-);
-
+// Initialize header functions
 function initializeHeaderFunctions() {
   const menuItems = document.querySelectorAll(".header-nav>ul>li");
   const menuFrame = document.querySelector(".header-frame");
   let activeItem =
     document.querySelector(".header-nav>ul>li.active") || menuItems[0];
 
-  // 초기 위치 설정
+  // Initial position setup
   updateFramePosition(activeItem);
 
   menuItems.forEach((item) => {
@@ -40,91 +48,87 @@ function initializeHeaderFunctions() {
     });
 
     item.addEventListener("click", () => {
-      // 모든 메뉴 항목에서 active 클래스 제거
+      // Remove active class from all menu items
       menuItems.forEach((i) => i.classList.remove("active"));
 
-      // 클릭한 메뉴 항목에 active 클래스 추가
+      // Add active class to the clicked menu item
       item.classList.add("active");
       activeItem = item;
 
-      // 클릭한 항목으로 위치 고정
+      // Fix position to the clicked item
       updateFramePosition(item);
 
-      // 모든 섹션 숨기기
+      // Hide all content sections
       document.querySelectorAll(".content-section").forEach((section) => {
         section.classList.remove("active");
       });
 
-      // 클릭한 메뉴 항목과 연결된 섹션 표시
+      // Display the section associated with the clicked menu item
       const targetSection = document.querySelector(
         item.getAttribute("data-target")
       );
-      targetSection.classList.add("active");
+      if (targetSection) {
+        targetSection.classList.add("active");
+      }
     });
   });
 
   function updateFramePosition(item) {
-    // 선택된 메뉴 항목의 위치 및 크기를 가져옴
+    // Get position and size of the selected menu item
     const itemRect = item.getBoundingClientRect();
-    // 메뉴 항목의 부모 요소(ul)의 위치를 가져옴
+    // Get position of the parent element (ul) of the menu item
     const parentRect = item.parentElement.getBoundingClientRect();
-    // 프레임의 위치를 계산
+    // Calculate the frame position
     const position =
       parentRect.left +
       (itemRect.left - parentRect.left) +
       item.parentElement.scrollLeft;
 
-    // 프레임의 위치를 계산된 값으로 설정
+    // Set the frame position to the calculated value
     menuFrame.style.transform = `translateX(${position}px)`;
   }
 }
 
+// Initialize footer functions
 function initializeFooterFunctions() {
-  // 하단 메뉴 바
+  // Bottom menu bar
   document.querySelectorAll(".nav_toggle").forEach((button) => {
     button.addEventListener("click", function (event) {
-      event.stopPropagation(); // 클릭 이벤트 전파 방지
+      event.stopPropagation(); // Prevent click event propagation
       const targetId = this.getAttribute("data-target");
       const navMenu = document.getElementById("nav_menu");
 
-      if (!navMenu.classList.contains("show")) {
-        // 모든 메뉴 콘텐츠 숨기기
-        document.querySelectorAll(".menu-content").forEach((content) => {
-          content.classList.add("hidden");
-        });
-        // 선택된 메뉴 콘텐츠 보이기
-        document.getElementById(targetId).classList.remove("hidden");
+      // Hide all menu contents
+      document.querySelectorAll(".menu-content").forEach((content) => {
+        content.classList.add("hidden");
+      });
 
-        // 메뉴 토글
-        navMenu.classList.toggle("show");
+      if (
+        !navMenu.classList.contains("show") ||
+        navMenu.getAttribute("data-current") !== targetId
+      ) {
+        // Display selected menu content
+        document.getElementById(targetId).classList.remove("hidden");
+        navMenu.classList.add("show");
+        navMenu.setAttribute("data-current", targetId);
       } else {
-        // 메뉴 닫기
+        // Close the menu
         navMenu.classList.remove("show");
-        // 약간의 딜레이 후 hidden 처리 (자연스러운 효과를 위해)
-        setTimeout(() => {
-          document.querySelectorAll(".menu-content").forEach((content) => {
-            content.classList.add("hidden");
-          });
-        }, 400); // transition 시간과 동일하게 설정
+        navMenu.removeAttribute("data-current");
       }
     });
   });
 
-  // 문서 클릭 시 메뉴 닫기
+  // Close the menu when clicking on the document
   document.addEventListener("click", function () {
     const navMenu = document.getElementById("nav_menu");
     if (navMenu.classList.contains("show")) {
       navMenu.classList.remove("show");
-      // 약간의 딜레이 후 hidden 처리 (자연스러운 효과를 위해)
-      setTimeout(() => {
-        document.querySelectorAll(".menu-content").forEach((content) => {
-          content.classList.add("hidden");
-        });
-      }, 400); // transition 시간과 동일하게 설정
+      navMenu.removeAttribute("data-current");
     }
   });
 
-  // 메뉴 내 클릭 시 이벤트 전파 방지
+  // Prevent event propagation when clicking inside the menu
   document
     .getElementById("nav_menu")
     .addEventListener("click", function (event) {
@@ -132,7 +136,97 @@ function initializeFooterFunctions() {
     });
 }
 
-// Additional scripts to run after all content is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('All content is loaded');
+// Function to display character data
+function displayCharacterData(data) {
+  const footerLv = document.getElementById("footer-lv");
+  const footerName = document.getElementById("footer-name");
+  const footerExp = document.getElementById("footer-exp");
+  const footerExpBar = document.getElementById("footer-exp-bar");
+
+  if (footerLv) footerLv.innerText = `Lv.${data.character_level}`;
+  if (footerName) footerName.innerText = data.character_name;
+  if (footerExp) footerExp.innerText = `${data.character_exp} [${data.character_exp_rate}%]`;
+  if (footerExpBar) footerExpBar.style.width = `calc((100% - 16.5px) * ${data.character_exp_rate}/100)`;
+}
+
+// Function to fetch character info from API using ocid
+async function lookupCharacterInfo(ocid) {
+  try {
+    const apiKey = await getApiKey();
+    if (!apiKey) return; // Exit if API key is not available
+
+    const url = `https://open.api.nexon.com/maplestory/v1/character/basic?ocid=${ocid}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "x-nxopen-api-key": apiKey,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+
+    const data = await response.json();
+    // Update retrieved data using the displayCharacterData function
+    displayCharacterData(data);
+  } catch (error) {
+    console.error("Error fetching character data:", error);
+  }
+}
+
+// Single DOMContentLoaded event listener
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("All content is loaded");
+
+  // Initialize header functions
+  initializeHeaderFunctions();
+
+  // Include footer and initialize footer functions
+  includeHTML("footer-placeholder", "../layouts/footer.html", initializeFooterFunctions);
+
+  // Get ocid from query parameters and fetch character data
+  const queryParams = getQueryParams();
+  const ocid = queryParams.ocid;
+
+  if (ocid) {
+    // Fetch character data using ocid
+    await lookupCharacterInfo(ocid);
+  }
+
+  // Async function to dynamically create grid cells
+  async function createGridCells() {
+    const expGrid = document.querySelector(".exp-grid");
+
+    try {
+      for (let i = 0; i < 10; i++) {
+        const cell = document.createElement("div");
+        expGrid.appendChild(cell);
+      }
+    } catch (error) {
+      console.error("Error creating grid cells:", error);
+    }
+  }
+
+  // Call function to create grid cells
+  await createGridCells();
 });
+
+// Function to get query parameters
+function getQueryParams() {
+  const params = {};
+  const queryString = window.location.search.substring(1);
+  const queries = queryString.split("&");
+
+  queries.forEach((query) => {
+    const [key, value] = query.split("=");
+    params[key] = decodeURIComponent(value);
+  });
+
+  return params;
+}
+
+// Optional function that can be used if needed
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
