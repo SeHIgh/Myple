@@ -29,6 +29,14 @@ async function lookupCharacterOcid() {
     }
 }
 
+async function redirectToCharacterInfoPage() {
+    const ocid = await lookupCharacterOcid();
+    if (ocid) {
+        // ocid 정보를 쿼리 파라미터로 전달하며 페이지 이동
+        window.location.href = `./pages/main.html?ocid=${ocid}`;
+    }
+}
+
 async function lookupCharacterInfo() {
     const ocid = await lookupCharacterOcid();
     if (!ocid) return;  // OCID가 null일 경우 함수 종료
@@ -76,6 +84,10 @@ async function lookupCharacterInfo() {
         const lvElement = document.getElementById('lv');
         lvElement.style.color = 'black';
         document.getElementById('levelResult').innerText = data.character_level;
+
+        // 데이터를 쿠키에 저장
+        document.cookie = `characterData=${encodeURIComponent(JSON.stringify(data))}; path=/`;
+
     } catch (error) {
         document.getElementById('characterNameResult').innerText = ``;
     }
@@ -88,52 +100,83 @@ function delay(ms) {
 document.addEventListener('DOMContentLoaded', () => {
     const lookupButton = document.getElementById('lookupButton');
     const characterNameInput = document.getElementById('characterName');
+    const nextBtn = document.getElementById('nextBtn');
 
-    // 버튼 클릭 이벤트
-    lookupButton.addEventListener('click', () => {
-        // 기존 캐릭터 정보 초기화
-        resetCharacterInfo();
-
-        // 캐릭터 정보 조회
-        lookupCharacterInfo();
-    });
-
-    // 엔터 키 이벤트
-    characterNameInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
+    if (lookupButton) {
+        // 버튼 클릭 이벤트
+        lookupButton.addEventListener('click', () => {
             // 기존 캐릭터 정보 초기화
             resetCharacterInfo();
 
             // 캐릭터 정보 조회
             lookupCharacterInfo();
-        }
-    });
+        });
+    }
+
+    if (characterNameInput) {
+        // 엔터 키 이벤트
+        characterNameInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                // 기존 캐릭터 정보 초기화
+                resetCharacterInfo();
+
+                // 캐릭터 정보 조회
+                lookupCharacterInfo();
+            }
+        });
+    }
+
+    if (nextBtn) {
+        // nextBtn 클릭 이벤트
+        nextBtn.addEventListener('click', () => {
+            redirectToCharacterInfoPage();
+        });
+    }
 });
 
 // 캐릭터 정보 초기화 함수
 function resetCharacterInfo() {
     const result = document.getElementById('result');
-    result.innerText = '';
+    if (result) result.innerText = '';
 
     const section1 = document.getElementById('section1');
-    section1.style.transition = 'none'; // transition 없애기
-    section1.style.width = 'auto';
-    section1.style.padding = '50px';
+    if (section1) {
+        section1.style.transition = 'none'; // transition 없애기
+        section1.style.width = 'auto';
+        section1.style.padding = '50px';
+    }
 
     const characterPreview = document.getElementById('character-preview');
-    characterPreview.style.transition = 'none'; // transition 없애기
-    characterPreview.style.display = 'none';
+    if (characterPreview) {
+        characterPreview.style.transition = 'none'; // transition 없애기
+        characterPreview.style.display = 'none';
+    }
 
     const characterInfo = document.getElementById('character-info-box');
-    characterInfo.style.transition = 'none'; // transition 없애기
-    characterInfo.style.display = 'none';
-    
+    if (characterInfo) {
+        characterInfo.style.transition = 'none'; // transition 없애기
+        characterInfo.style.display = 'none';
+    }
+
     // 기타 필요한 요소 초기화
-    document.getElementById('characterImgResult').src = '';
-    document.getElementById('serverLogo').src = '';
-    document.getElementById('serverResult').innerText = '';
-    document.getElementById('characterNameResult').innerText = '';
-    document.getElementById('jobResult').innerText = '';
-    document.getElementById('levelResult').innerText = '';
-    document.getElementById('lv').style.color = '';
+    const characterImgResult = document.getElementById('characterImgResult');
+    if (characterImgResult) characterImgResult.src = '';
+
+    const serverLogo = document.getElementById('serverLogo');
+    if (serverLogo) serverLogo.src = '';
+
+    const serverResult = document.getElementById('serverResult');
+    if (serverResult) serverResult.innerText = '';
+
+    const characterNameResult = document.getElementById('characterNameResult');
+    if (characterNameResult) characterNameResult.innerText = '';
+
+    const jobResult = document.getElementById('jobResult');
+    if (jobResult) jobResult.innerText = '';
+
+    const levelResult = document.getElementById('levelResult');
+    if (levelResult) levelResult.innerText = '';
+
+    const lvElement = document.getElementById('lv');
+    if (lvElement) lvElement.style.color = '';
 }
