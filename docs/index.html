@@ -16,22 +16,38 @@
         }
         .container {
             text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         button {
+            background-color: transparent;
+            color: #333;
+            border: 2px solid #333;
+            border-radius: 5px;
+
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
             padding: 10px 20px;
             font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
             margin-top: 20px;
         }
         .result {
+            width: fit-content;
             font-size: 24px;
             margin-top: 20px;
             font-weight: bold;
+
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>스탠리 색상 랜덤 선택기</h1>
+        <h1>스탠리 색상 <br> 랜덤 선택기</h1>
         <button onclick="chooseRandom()">선택해죠!</button>
         <div class="result" id="result"></div>
     </div>
@@ -41,6 +57,13 @@
             const choices = ["헤더 블루", "민트"];
             const randomIndex = Math.floor(Math.random() * choices.length);
             document.getElementById("result").innerText = choices[randomIndex];
+            if(choices[randomIndex] === "헤더 블루") {
+                document.body.style.backgroundColor = "#768DAD";
+                document.getElementById("result").style.color = "#768DAD";
+            } else {
+                document.body.style.backgroundColor = "#C7DED8";
+                document.getElementById("result").style.color = "#C7DED8";
+            }
         }
     </script>
 </body>
