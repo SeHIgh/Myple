@@ -19,7 +19,7 @@ main{
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     background-color: #f5f5f5;
@@ -53,7 +53,8 @@ main{
 
 #section1 .login-box .input-box {
     min-width: 200px;
-    padding-right: 10px;
+    max-width: 200px;
+    padding : 2px 10px 2px 2px;
 
     display: flex;
     flex-direction: row;
@@ -77,6 +78,7 @@ main{
     font-size: 14px;
 
     border: none;
+    border-radius: 3px;
 }
 
 #section1 .login-box .input-box:hover {
@@ -95,12 +97,25 @@ main{
     border: none;
     border-radius: 5px;
     background-color: transparent;
-    color: #000000;
-    font-size: 18px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
 }
-#section1 #result{
+#section1 .login-box .input-box button i{
+    font-size: 20px;
+    color: #000000;
+
+    transition: 0.3s ease;
+}
+#section1 .login-box .input-box button:hover i{
+    font-size: 22px;
+}
+
+#section1 .login-box .input-cont #result{
     height: 10px;
     font-size: 12px;
     color: red;
