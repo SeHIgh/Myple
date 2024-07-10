@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myple</title>
+  <link rel="stylesheet" href="./assets/css/index.css" type="text/css">
+  <link rel="icon" href="./assets/images/logos/maple_leaf.png" type="image/png">
+</head>
+
+<body>
+  <main>
+    <!-- 1. 캐릭터 정보 -->
+    <section id="section1" class="content-section">
+      <div class="login-box">
+        <figure class="Logo"><a href="./index.html"><img src="./assets/images/logos/Myple_Logo.png" alt="Logo"></a>
+        </figure>
+        <div class="txt-box">
+          <h1 class="title">로그인</h1>
+          <p class="desc">캐릭터 이름으로 로그인 할 수 있어요</p>
+        </div>
+        <div class="input-cont">
+          <div class="input-box">
+            <input type="text" id="characterName" placeholder="캐릭터 이름 입력">
+            <button id="lookupButton" onclick="lookupCharacterInfo()"><i class="fa-solid fa-right-to-bracket"></i></button>
+          </div>
+          <p id="result"></p>
+        </div>
+      </div>
+      <!-- 캐릭터 미리보기 -->
+      <div id="character-preview" style="display: none;">
+        <!-- 사원증 프레임 -->
+        <div id="character-info-box" style="display: none;">
+          <div class="character-prev-world">
+            <img id="serverLogo" src="./assets/images/logos/maple_leaf.png" alt="">
+            <span id="serverResult">Maple,lnc.</span>
+          </div>
+          <div class="character-prev-img">
+            <img id="characterImgResult" alt="">
+          </div>
+          <div class="character-prev-name">
+            <span id="characterNameResult"></span>
+          </div>
+          <div class="character-prev-job">
+            <span id="jobResult"></span>
+          </div>
+          <div class="character-prev-level">
+            <i id="lv">Lv.</i><span id="levelResult"></span>
+          </div>
+        </div>
+        <!-- 다음 페이지 이동 버튼 -->
+        <button id="nextBtn" onclick="lookupCharacterInfo()" style="display: none;"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/js/Union.js"></script>
+  <script src="https://kit.fontawesome.com/47a5d4bea1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
