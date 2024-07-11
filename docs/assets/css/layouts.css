@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Nanum+Gothic+Coding:wght@400;700&display=swap');
-
+/* 메이플 */
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 던파 비트 1 */
+@font-face {
+    font-family: 'bitbit';
+    src: url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'), url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2');
+}
+/* 던파 비트 2 */
+@font-face {
+    font-family: 'DNFBitBitv2';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
+}
 /* BASIC */
 * {
     padding: 0;
@@ -34,7 +52,7 @@ body{
     
     background-color: #F5F5F5;
 
-    font-family: "Nanum Gothic Coding", monospace;
+    font-family: 'DNFBitBitv2';
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
