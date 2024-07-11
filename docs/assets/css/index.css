@@ -1,6 +1,6 @@
 @import url(./layouts.css);
 
-/* 애니메이션 추가 */
+/* 뒤집히는 애니메이션 */
 @keyframes flip {
     0% {
         transform: rotateY(0);
@@ -10,8 +10,6 @@
         transform: rotateY(180deg);
     }
 }
-
-/* 회전된 상태 추가 */
 @keyframes flip-back {
     0% {
         transform: rotateY(180deg);
@@ -21,7 +19,6 @@
         transform: rotateY(360deg);
     }
 }
-
 /* 원상태로 돌아가는 애니메이션 */
 @keyframes reverse-flip {
     0% {
@@ -31,7 +28,6 @@
         transform: rotateY(0);
     }
 }
-
 @keyframes reverse-flip-back {
     0% {
         transform: rotateY(360deg);
@@ -58,16 +54,18 @@ main {
     height: 450px;
     min-height: 450px;
 
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color: transparent;
 
-    border: 2.5px solid #000000;
+    /* border: 2.5px solid #000000; */
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 0 10px 0 rgba(0, 0, 0, 0.2); */
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
     transition: 0.2s ease;
 
     display: grid;
-    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+    grid-template-columns: 0.15fr 0.7fr 0.15fr;
     grid-template-rows: 0.1fr 0.8fr 0.1fr;
 }
 
@@ -93,34 +91,6 @@ main {
 
     z-index: 2;
 }
-
-#character-preview {
-    grid-column: 1/4; /* 1열부터 3열까지 */
-    grid-row: 1/4; /* 1행부터 3행까지 */
-
-    display: grid;
-    grid-template-columns: 0.1fr 0.8fr 0.1fr;
-    grid-template-rows: 0.1fr 0.8fr 0.1fr;
-    
-    transform: rotateY(180deg);
-}
-
-/* 회전 클래스 (회전 되었을 때의 디자인)*/
-.flip .login-box {
-    animation: flip 0.6s forwards;
-}
-.flip #character-preview {
-    animation: flip-back 0.6s forwards;
-}
-
-/* 회전 클래스 (원래 상태로 돌아가는 디자인) */
-.flip-back .login-box {
-    animation: reverse-flip 0.6s forwards;
-}
-.flip-back #character-preview {
-    animation: reverse-flip-back 0.6s forwards;
-}
-
 
 /* 로그인 - 글귀 */
 .login-box .txt-box {
@@ -218,6 +188,33 @@ main {
     text-align: center;
 }
 
+#character-preview {
+    grid-column: 1/4; /* 1열부터 3열까지 */
+    grid-row: 1/4; /* 1행부터 3행까지 */
+
+    display: grid;
+    grid-template-columns: 0.15fr 0.7fr 0.15fr;
+    grid-template-rows: 0.1fr 0.8fr 0.1fr;
+
+    transform: rotateY(180deg);
+}
+
+/* 회전 클래스 (회전 되었을 때의 디자인)*/
+.flip .login-box {
+    animation: flip 0.6s forwards;
+}
+.flip #character-preview {
+    animation: flip-back 0.6s forwards;
+}
+
+/* 회전 클래스 (원래 상태로 돌아가는 디자인) */
+.flip-back .login-box {
+    animation: reverse-flip 0.6s forwards;
+}
+.flip-back #character-preview {
+    animation: reverse-flip-back 0.6s forwards;
+}
+
 /* 캐릭터 미리보기 (확인용) */
 
 /* like. 사원증 */
@@ -227,7 +224,7 @@ main {
     grid-column: 2;
     grid-row: 2;
 
-    width: 85%;
+    width: 100%;
     height: 100%;
     margin: auto;
     padding: 10px;
