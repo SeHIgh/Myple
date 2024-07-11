@@ -37,6 +37,16 @@
     }
 }
 
+button{
+    font-family: 'bitbit';
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 main {
     width: 100%;
     height: 100vh;
@@ -102,6 +112,18 @@ main {
     align-items: center;
     gap: 10px;
 }
+
+.login-box .txt-box .title{
+    font-size: 22px;
+    font-weight: normal;
+}
+.login-box .txt-box .desc{
+    font-size: 14px;
+    font-weight: normal;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
 /* 로그인 - 닉네임 입력 칸 */
 .login-box .input-cont {
     display: flex;
@@ -135,8 +157,9 @@ main {
     padding: 0 10px;
     background-color: transparent;
     text-align: center;
-    font-size: 12px;
-    font-weight: bold;
+    font-family: 'bitbit';
+    font-size: 16px;
+    font-weight: normal;
 
     border: none;
     border-radius: 3px;
@@ -227,14 +250,13 @@ main {
     width: 100%;
     height: 100%;
     margin: auto;
-    padding: 10px;
 
     border: 2px solid #000000;
     border-radius: 10px;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:space-evenly;
     align-items: center;
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
