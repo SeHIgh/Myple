@@ -1,70 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스탠리 색상 정해줘!</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        button {
-            background-color: transparent;
-            color: #333;
-            border: 2px solid #333;
-            border-radius: 5px;
-
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .result {
-            width: fit-content;
-            font-size: 24px;
-            margin-top: 20px;
-            font-weight: bold;
-
-            background-color: #f0f0f0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myple</title>
+  <link rel="stylesheet" href="./assets/css/index.css" type="text/css">
+  <link rel="icon" href="./assets/images/logos/maple_leaf.png" type="image/png">
 </head>
-<body>
-    <div class="container">
-        <h1>스탠리 색상 <br> 랜덤 선택기</h1>
-        <button onclick="chooseRandom()">선택해죠!</button>
-        <div class="result" id="result"></div>
-    </div>
 
-    <script>
-        function chooseRandom() {
-            const choices = ["헤더 블루", "민트"];
-            const randomIndex = Math.floor(Math.random() * choices.length);
-            document.getElementById("result").innerText = choices[randomIndex];
-            if(choices[randomIndex] === "헤더 블루") {
-                document.body.style.backgroundColor = "#768DAD";
-                document.getElementById("result").style.color = "#768DAD";
-            } else {
-                document.body.style.backgroundColor = "#C7DED8";
-                document.getElementById("result").style.color = "#C7DED8";
-            }
-        }
-    </script>
+<body>
+  <main>
+    <!-- 1. 캐릭터 정보 -->
+    <section id="section1" class="content-section">
+      <div class="login-box">
+        <figure class="Logo"><a href="./index.html"><img src="./assets/images/logos/Myple_Logo.png" alt="Logo"></a>
+        </figure>
+        <div class="txt-box">
+          <h1 class="title">로그인</h1>
+          <p class="desc">캐릭터 이름으로 로그인 할 수 있어요</p>
+        </div>
+        <div class="input-cont">
+          <div class="input-box">
+            <input type="text" id="characterName" placeholder="캐릭터 이름 입력">
+            <button id="lookupButton" onclick="lookupCharacterInfo()"><i class="fa-solid fa-right-to-bracket"></i></button>
+          </div>
+          <p id="result"></p>
+        </div>
+      </div>
+      <!-- 캐릭터 미리보기 -->
+      <div id="character-preview">
+        <!-- 사원증 프레임 -->
+        <div id="character-info-box">
+          <div class="character-prev-world">
+            <img id="serverLogo" src="./assets/images/logos/maple_leaf.png" alt="">
+            <span id="serverResult">Maple,lnc.</span>
+          </div>
+          <div class="character-prev-img">
+            <img id="characterImgResult" alt="">
+          </div>
+          <div class="character-prev-name">
+            <span id="characterNameResult"></span>
+          </div>
+          <div class="character-prev-job">
+            <span id="jobResult"></span>
+          </div>
+          <div class="character-prev-level">
+            <i id="lv">Lv.</i><span id="levelResult"></span>
+          </div>
+        </div>
+        <!-- 다음 페이지 이동 버튼 -->
+        <button id="nextBtn" style="display: none;"><i class="fa-solid fa-arrow-right"></i><span>다음</span></button>
+        <!-- 리셋 버튼 -->
+        <button id="resetBtn" style="display: none;"><i class="fa-solid fa-rotate-left"></i><span>재입력</span></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- <script src="./assets/js/Union.js"></script> -->
+  <script src="./assets/js/index.js"></script>
+  <script src="https://kit.fontawesome.com/47a5d4bea1.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
