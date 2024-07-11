@@ -18,6 +18,20 @@
     font-weight: 400;
     src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
 }
+/* 넥슨 고딕 1 */
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 넥슨 고딕 2 */
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* BASIC */
 * {
     padding: 0;
@@ -234,6 +248,10 @@ footer{
     gap: 10px;
 
     z-index: 100;
+
+    font-family: "Nanum Gothic Coding", monospace;
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* FOOTER - EMPTY BOX */
@@ -479,7 +497,7 @@ footer>.empty-box{
 }
 
 .exp-box > h1{
-    width: 16.5px;
+    width: 18px;
     color: white;
     font-size: 11px;
     font-weight: 600;
