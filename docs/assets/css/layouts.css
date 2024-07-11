@@ -53,6 +53,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: end;
 }
 
 header>.Logo {
@@ -124,7 +125,7 @@ header>.header-frame>.bottom {
 
 .header-nav{
     width: calc(100% - 100px - 15px);
-    height: 100%;
+    height: 70%;
 
     display: flex;
     flex-direction: row;

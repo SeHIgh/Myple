@@ -1,6 +1,47 @@
 @import url(./layouts.css);
 
-main{
+/* 애니메이션 추가 */
+@keyframes flip {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+/* 회전된 상태 추가 */
+@keyframes flip-back {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* 원상태로 돌아가는 애니메이션 */
+@keyframes reverse-flip {
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0);
+    }
+}
+
+@keyframes reverse-flip-back {
+    0% {
+        transform: rotateY(360deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+main {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -9,18 +50,13 @@ main{
     align-items: center;
 }
 
-#section1{
-    width: auto;
-    max-width: 700px;
-    height: 50vh;
-    min-height: 300px;
+#section1 {
+    position: relative;
 
-    padding: 50px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    width: 350px;
+    min-width: 350px;
+    height: 450px;
+    min-height: 450px;
 
     background-color: #f5f5f5;
 
@@ -29,19 +65,65 @@ main{
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
     transition: 0.2s ease;
+
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+    grid-template-rows: 0.1fr 0.8fr 0.1fr;
 }
 
-#section1 .login-box {
+/* .login-box와 #character-preview의 기본 스타일 */
+.login-box,
+#character-preview {
     width: 100%;
-    max-width: 400px;
     height: 100%;
+
+    backface-visibility: hidden;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    transition: transform 0.6s;
 }
-#section1 .login-box .txt-box {
+
+.login-box {
+    grid-column: 2;
+    grid-row: 2;
+
+    z-index: 2;
+}
+
+#character-preview {
+    grid-column: 1/4; /* 1열부터 3열까지 */
+    grid-row: 1/4; /* 1행부터 3행까지 */
+
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+    grid-template-rows: 0.1fr 0.8fr 0.1fr;
+    
+    transform: rotateY(180deg);
+}
+
+/* 회전 클래스 (회전 되었을 때의 디자인)*/
+.flip .login-box {
+    animation: flip 0.6s forwards;
+}
+.flip #character-preview {
+    animation: flip-back 0.6s forwards;
+}
+
+/* 회전 클래스 (원래 상태로 돌아가는 디자인) */
+.flip-back .login-box {
+    animation: reverse-flip 0.6s forwards;
+}
+.flip-back #character-preview {
+    animation: reverse-flip-back 0.6s forwards;
+}
+
+
+/* 로그인 - 글귀 */
+.login-box .txt-box {
     width: 100%;
 
     display: flex;
@@ -50,8 +132,8 @@ main{
     align-items: center;
     gap: 10px;
 }
-
-#section1 .login-box .input-cont{
+/* 로그인 - 닉네임 입력 칸 */
+.login-box .input-cont {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -59,10 +141,10 @@ main{
     gap: 10px;
 }
 
-#section1 .login-box .input-cont .input-box {
+.login-box .input-cont .input-box {
     min-width: 200px;
     max-width: 200px;
-    padding : 2px 10px 2px 2px;
+    padding: 2px 10px 2px 2px;
 
     display: flex;
     flex-direction: row;
@@ -77,7 +159,7 @@ main{
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-#section1 .login-box .input-cont .input-box input {
+.login-box .input-cont .input-box input {
     width: 100%;
     height: 40px;
     padding: 0 10px;
@@ -90,16 +172,16 @@ main{
     border-radius: 3px;
 }
 
-#section1 .login-box .input-cont .input-box:hover {
+.login-box .input-cont .input-box:hover {
     background-color: #F0C030;
 }
 
-#section1 .login-box .input-cont .input-box input:focus {
+.login-box .input-cont .input-box input:focus {
     outline: none;
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-#section1 .login-box .input-cont .input-box button{
+.login-box .input-cont .input-box button {
     width: 10%;
     height: 100%;
     padding: 0;
@@ -114,18 +196,21 @@ main{
 
     cursor: pointer;
 }
-#section1 .login-box .input-cont .input-box button i{
+
+.login-box .input-cont .input-box button i {
     font-size: 20px;
     color: #000000;
 
     transition: 0.3s ease;
 }
-#section1 .login-box .input-cont .input-box button:hover i{
+
+.login-box .input-cont .input-box button:hover i {
     font-size: 22px;
     transform: translateY(-2px);
 }
 
-#section1 .login-box .input-cont #result{
+/* 오류 매세지 출력 */
+.login-box .input-cont #result {
     height: 10px;
     font-size: 12px;
     color: red;
@@ -133,53 +218,18 @@ main{
     text-align: center;
 }
 
-
 /* 캐릭터 미리보기 (확인용) */
-#character-preview{
-    position : relative;
 
-    width: 40%;
-    height: 100%;
-
-    border-left: 2px solid #000000;
-    padding: 0 10px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    gap: 10px;
-}
-#character-preview #nextBtn{
-    position : absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 25px;
-    height: 25px;
-
-    background-color: transparent;
-
-    border: none;
-
-    cursor: pointer;
-}
-#character-preview #nextBtn:hover{
-    transform: scale(1.2) translateY(-44%);
-}
-#character-preview #nextBtn i { 
-    font-size: 25px;
-
-    background-color: transparent;
-
-    border: none;
-}
 /* like. 사원증 */
-#character-preview #character-info-box{
-    width: 80%;
-    aspect-ratio: 1/1.5; /* 1:1.5 비율 */
+/* height 가 정의 되지 않고 비율로 정의 되었기 때문에 */
+/* 중앙 배치가 필요 */
+#character-preview #character-info-box {
+    grid-column: 2;
+    grid-row: 2;
+
+    width: 85%;
+    height: 100%;
+    margin: auto;
     padding: 10px;
 
     border: 2px solid #000000;
@@ -192,7 +242,8 @@ main{
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 }
-#character-preview #character-info-box .character-prev-world{
+
+#character-preview #character-info-box .character-prev-world {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -202,16 +253,18 @@ main{
     justify-content: center;
     align-items: center;
 }
-#character-preview #character-info-box .character-prev-world img{
+
+#character-preview #character-info-box .character-prev-world img {
     width: 18px;
     height: auto;
     margin-right: 5px;
     filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
 }
 
-#character-preview #character-info-box .character-prev-img{
+#character-preview #character-info-box .character-prev-img {
     width: 80%;
-    aspect-ratio: 1/1; /* 1:1 비율 (정사각형) */
+    aspect-ratio: 1/1;
+    /* 1:1 비율 (정사각형) */
 
     border: 2.5px solid #000000;
     border-radius: 10px;
@@ -227,27 +280,31 @@ main{
 
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
-#character-preview #character-info-box .character-prev-img img{
+
+#character-preview #character-info-box .character-prev-img img {
     background-color: transparent;
     scale: 2.0;
 }
 
-#character-preview #character-info-box .character-prev-name{
+#character-preview #character-info-box .character-prev-name {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
 }
-#character-preview #character-info-box .character-prev-job{
+
+#character-preview #character-info-box .character-prev-job {
     font-size: 16px;
     font-weight: normal;
     text-align: center;
 }
-#character-preview #character-info-box .character-prev-level{
+
+#character-preview #character-info-box .character-prev-level {
     font-size: 18px;
     font-weight: normal;
     text-align: center;
 }
-#character-preview #character-info-box .character-prev-level i{
+
+#character-preview #character-info-box .character-prev-level i {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -255,3 +312,53 @@ main{
     text-shadow: none;
 }
 
+/* main.html 로 넘겨 주는 버튼 */
+#character-preview button {
+    margin: auto;
+
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#character-preview #nextBtn{
+    width: 28px;
+    height: 38px;
+    grid-column: 3;
+    grid-row: 2;
+}
+#character-preview #resetBtn{
+    width: 30px;
+    height: 38px;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* #character-preview button:hover {
+    transform: scale(1.2);
+} */
+
+#character-preview button i {
+    font-size: 22px;
+
+    transition: 0.3s ease-in-out;
+}
+#character-preview button span {
+    font-size: 11px;
+}
+
+#character-preview #nextBtn:hover i {
+    transform: scale(1.2);
+}
+#character-preview #resetBtn:hover i {
+    transform: scale(1.2) rotate(-360deg);
+}
