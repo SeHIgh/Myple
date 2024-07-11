@@ -134,8 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // resetBtn 클릭 이벤트
     resetBtn.addEventListener("click", () => {
       const contentSection = document.querySelector("section.content-section");
+      const characterNameInput = document.getElementById("characterName");
       contentSection.classList.add("flip-back");
       contentSection.classList.remove("flip");
+      characterNameInput.value = "";
     });
   }
 });
