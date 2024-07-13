@@ -1,0 +1,16 @@
+{
+  "date": null,
+  "character_name": "세봔",
+  "world_name": "스카니아",
+  "character_gender": "남",
+  "character_class": "에반",
+  "character_class_level": "6",
+  "character_level": 267,
+  "character_exp": 349644661074,
+  "character_exp_rate": "14.629",
+  "character_guild_name": "초월",
+  "character_image": "https://open.api.nexon.com/static/maplestory/Character/OHOFFHGGNGKNMGKOPHDJIAGAKJALGKOPKLDCOKKCNOBONDEGHFCFNBMKMDDHDFDBNMHMNMLGFNEGJGHBNEPBPEDLEKBBKLIKOOOLBLGELFOCFIJCAKOHALOOENAJLJNACJNGMHCIMHBKCILGLGIBONNFJINJADCJKHOKAJLNIECOMFNNDKKMKBFEJDJIIENBGIJDNMKHPEHPIBOIPMINDNGADCPELMBPALPMFMKKACBBGKHKJCEIBCJBKDPDCIOA.png",
+  "character_date_create": "2024-06-20T00:00+09:00",
+  "access_flag": "true",
+  "liberation_quest_clear_flag": "false"
+}
