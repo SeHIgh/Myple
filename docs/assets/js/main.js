@@ -136,8 +136,8 @@ function initializeFooterFunctions() {
     });
 }
 
-// Function to display character data
-function displayCharacterData(data) {
+// 사용자 기본 정보 표시 함수
+function displayCharacterInfo(data) {
   const footerLv = document.getElementById("footer-lv");
   const footerName = document.getElementById("footer-name");
   const footerExp = document.getElementById("footer-exp");
@@ -148,8 +148,21 @@ function displayCharacterData(data) {
   if (footerExp) footerExp.innerText = `${data.character_exp} [${data.character_exp_rate}%]`;
   if (footerExpBar) footerExpBar.style.width = `calc((100% - 16.5px) * ${data.character_exp_rate}/100)`;
 }
+// 사용자 스텟 정보 표시 함수
+function displayCharacterStat(data) {
+  const footerHP = document.getElementById("footer-hp");
+  const footerMP = document.getElementById("footer-mp");
 
-// Function to fetch character info from API using ocid
+  const character_hp = data.final_stat.find(stat => stat.stat_name === 'HP').stat_value;
+  const character_mp = data.final_stat.find(stat => stat.stat_name === 'MP').stat_value;
+  
+  if (footerHP) footerHP.getElementsByTagName('p')[0].innerText = `${character_hp}/${character_hp}`;
+  if (footerMP) footerMP.getElementsByTagName('p')[0].innerText = `${character_mp}/${character_mp}`;
+
+  console.log(data.final_stat);
+}
+
+// 사용자 기본 정보 조회 API 호출
 async function lookupCharacterInfo(ocid) {
   try {
     const apiKey = await getApiKey();
@@ -169,11 +182,38 @@ async function lookupCharacterInfo(ocid) {
 
     const data = await response.json();
     // Update retrieved data using the displayCharacterData function
-    displayCharacterData(data);
+    displayCharacterInfo(data);
   } catch (error) {
-    console.error("Error fetching character data:", error);
+    console.error("Error fetching character info data:", error);
   }
 }
+// 사용자 스텟 정보 조회 API 호출
+async function lookupCharacterStat(ocid) {
+  try {
+    const apiKey = await getApiKey();
+    if (!apiKey) return; // Exit if API key is not available
+
+    const url = `https://open.api.nexon.com/maplestory/v1/character/stat?ocid=${ocid}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "x-nxopen-api-key": apiKey,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+
+    const data = await response.json();
+    // Update retrieved data using the displayCharacterData function
+    displayCharacterStat(data);
+  } catch (error) {
+    console.error("Error fetching character stat data:", error);
+  }
+}
+
+
 
 // Single DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", async () => {
@@ -192,6 +232,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (ocid) {
     // Fetch character data using ocid
     await lookupCharacterInfo(ocid);
+    await lookupCharacterStat(ocid);
   }
 
   // Async function to dynamically create grid cells
