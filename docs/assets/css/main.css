@@ -1,1 +1,57 @@
 @import url(./layouts.css);
+
+main{
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30vh 30vh 10vh;
+    grid-gap: 5px;
+
+    grid-template-areas: 
+        'profile skills'
+        'profile contact'
+        'projects projects'
+    ;
+}
+
+main .content-section{
+    height: 30vh;
+    background-color: aliceblue;
+
+    border-radius: 10px;
+}
+
+main #section1{
+    grid-area: profile;
+
+    height: calc(60vh + 5px);
+}
+
+main #section2{
+    grid-area: skills;
+}
+
+main #section3{
+    grid-area: projects;
+
+    height: 10vh;
+}
+
+main #section4{
+    grid-area: contact;
+}
+
+.main-profile{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+
+    background-color: blanchedalmond;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
