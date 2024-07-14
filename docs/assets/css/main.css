@@ -31,6 +31,9 @@ main #section1{
     grid-area: profile;
 
     height: calc(60vh + 5px);
+
+    background-color: blanchedalmond;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
