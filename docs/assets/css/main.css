@@ -23,7 +23,19 @@ main .content-section{
     
     /* border: 2px solid #FFF4CC; */
     border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+main .content-section:hover{
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+main .comming-soon{
+    height: 30vh;
+    background-color: lightslategray;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* main grid 자리 이름 지정 및 할당 */
@@ -64,15 +76,41 @@ main #section4{
 .main-profile{
     width: 90%;
     height: 90%;
+    padding: 20px;
     border-radius: 10px;
 
     background-color: blanchedalmond;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'bitbit';
+    font-size: 12px;
+    font-weight: normal;
+
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-rows: repeat(13, 1fr);
+    grid-gap: 5px;
 }
 
-.main-profile div{
+.main-profile span, img{
+    width: 100%;
+    height: 100%;
+    line-height: 15px;
     background-color: lightgray;
+
+    border: none;
+    border-radius: 5px;
+
+    text-align: left;
+}
+
+.main-profile #search_date{
+    grid-column: 1/3;
+    width: 100%;
+}
+
+.main-profile #character_image{
+    grid-column: 2/3;
+    grid-row: 2/14;
+    width: 100%;
+    height: 100%;
 }
