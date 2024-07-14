@@ -14,7 +14,7 @@ async function getApiKey() {
 }
 
 // Function to include HTML files with callback
-async function includeHTML(id, url, callback) {
+async function includeHTML(id, url) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -22,7 +22,6 @@ async function includeHTML(id, url, callback) {
     }
     const data = await response.text();
     document.getElementById(id).innerHTML = data;
-    if (callback) callback(); // Callback function execution
   } catch (error) {
     console.error("Error loading HTML:", error);
   }
@@ -120,7 +119,6 @@ function initializeFooterFunctions() {
         closeMenu();
       } else {
         // Display selected menu content after a short delay for a natural transition
-
         hideAllMenuContents();
         document.getElementById(targetId).classList.remove("hidden");
         navMenu.classList.add("show");
@@ -154,6 +152,7 @@ function displayCharacterInfo(data) {
   if (footerExpBar)
     footerExpBar.style.width = `calc((100% - 16.5px) * ${data.character_exp_rate}/100)`;
 }
+
 // 사용자 스텟 정보 표시 함수
 function displayCharacterStat(data) {
   const footerHP = document.getElementById("footer-hp");
@@ -203,6 +202,7 @@ async function lookupCharacterInfo(ocid) {
     console.error("Error fetching character info data:", error);
   }
 }
+
 // 사용자 스텟 정보 조회 API 호출
 async function lookupCharacterStat(ocid) {
   try {
@@ -234,14 +234,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("All content is loaded");
 
   // Initialize header functions
-  initializeHeaderFunctions();
+  // initializeHeaderFunctions();
 
   // Include footer and initialize footer functions
-  includeHTML(
-    "footer-placeholder",
-    "../layouts/footer.html",
-    initializeFooterFunctions
-  );
+  await includeHTML("footer-placeholder", "../layouts/footer.html");
+
+  // Initialize footer functions after including the HTML
+  initializeFooterFunctions();
 
   // Get ocid from query parameters and fetch character data
   const queryParams = getQueryParams();
@@ -256,6 +255,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Async function to dynamically create grid cells
   async function createGridCells() {
     const expGrid = document.querySelector(".exp-grid");
+
+    if (!expGrid) {
+      console.error("Error: .exp-grid element not found");
+      return;
+    }
 
     try {
       for (let i = 0; i < 10; i++) {
