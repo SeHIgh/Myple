@@ -89,44 +89,48 @@ function initializeHeaderFunctions() {
   }
 }
 
-// Initialize footer functions
+// footer-nav toggle 초기화 함수
 function initializeFooterFunctions() {
-  // Bottom menu bar
+  // Function to hide all menu contents
+  const hideAllMenuContents = () => {
+    document.querySelectorAll(".menu-content").forEach((content) => {
+      content.classList.add("hidden");
+    });
+  };
+
+  // Function to close the menu
+  const closeMenu = () => {
+    const navMenu = document.getElementById("nav_menu");
+    navMenu.classList.remove("show");
+    navMenu.removeAttribute("data-current");
+    setTimeout(() => {
+      hideAllMenuContents();
+    }, 400); // 400ms delay for smoother transition (same as CSS transition duration)
+  };
+
+  // Bottom menu bar toggle functionality
   document.querySelectorAll(".nav_toggle").forEach((button) => {
     button.addEventListener("click", function (event) {
       event.stopPropagation(); // Prevent click event propagation
       const targetId = this.getAttribute("data-target");
       const navMenu = document.getElementById("nav_menu");
 
-      // Hide all menu contents
-      document.querySelectorAll(".menu-content").forEach((content) => {
-        content.classList.add("hidden");
-      });
+      if (navMenu.classList.contains("show")) {
+        // Close the menu if it is currently shown
+        closeMenu();
+      } else {
+        // Display selected menu content after a short delay for a natural transition
 
-      if (
-        !navMenu.classList.contains("show") ||
-        navMenu.getAttribute("data-current") !== targetId
-      ) {
-        // Display selected menu content
+        hideAllMenuContents();
         document.getElementById(targetId).classList.remove("hidden");
         navMenu.classList.add("show");
         navMenu.setAttribute("data-current", targetId);
-      } else {
-        // Close the menu
-        navMenu.classList.remove("show");
-        navMenu.removeAttribute("data-current");
       }
     });
   });
 
   // Close the menu when clicking on the document
-  document.addEventListener("click", function () {
-    const navMenu = document.getElementById("nav_menu");
-    if (navMenu.classList.contains("show")) {
-      navMenu.classList.remove("show");
-      navMenu.removeAttribute("data-current");
-    }
-  });
+  document.addEventListener("click", closeMenu);
 
   // Prevent event propagation when clicking inside the menu
   document
@@ -145,19 +149,31 @@ function displayCharacterInfo(data) {
 
   if (footerLv) footerLv.innerText = `Lv.${data.character_level}`;
   if (footerName) footerName.innerText = data.character_name;
-  if (footerExp) footerExp.innerText = `${data.character_exp} [${data.character_exp_rate}%]`;
-  if (footerExpBar) footerExpBar.style.width = `calc((100% - 16.5px) * ${data.character_exp_rate}/100)`;
+  if (footerExp)
+    footerExp.innerText = `${data.character_exp} [${data.character_exp_rate}%]`;
+  if (footerExpBar)
+    footerExpBar.style.width = `calc((100% - 16.5px) * ${data.character_exp_rate}/100)`;
 }
 // 사용자 스텟 정보 표시 함수
 function displayCharacterStat(data) {
   const footerHP = document.getElementById("footer-hp");
   const footerMP = document.getElementById("footer-mp");
 
-  const character_hp = data.final_stat.find(stat => stat.stat_name === 'HP').stat_value;
-  const character_mp = data.final_stat.find(stat => stat.stat_name === 'MP').stat_value;
-  
-  if (footerHP) footerHP.getElementsByTagName('p')[0].innerText = `${character_hp}/${character_hp}`;
-  if (footerMP) footerMP.getElementsByTagName('p')[0].innerText = `${character_mp}/${character_mp}`;
+  const character_hp = data.final_stat.find(
+    (stat) => stat.stat_name === "HP"
+  ).stat_value;
+  const character_mp = data.final_stat.find(
+    (stat) => stat.stat_name === "MP"
+  ).stat_value;
+
+  if (footerHP)
+    footerHP.getElementsByTagName(
+      "p"
+    )[0].innerText = `${character_hp}/${character_hp}`;
+  if (footerMP)
+    footerMP.getElementsByTagName(
+      "p"
+    )[0].innerText = `${character_mp}/${character_mp}`;
 
   console.log(data.final_stat);
 }
@@ -213,8 +229,6 @@ async function lookupCharacterStat(ocid) {
   }
 }
 
-
-
 // Single DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("All content is loaded");
@@ -223,7 +237,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   initializeHeaderFunctions();
 
   // Include footer and initialize footer functions
-  includeHTML("footer-placeholder", "../layouts/footer.html", initializeFooterFunctions);
+  includeHTML(
+    "footer-placeholder",
+    "../layouts/footer.html",
+    initializeFooterFunctions
+  );
 
   // Get ocid from query parameters and fetch character data
   const queryParams = getQueryParams();
