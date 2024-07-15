@@ -78,11 +78,11 @@ main #section4{
 
 .main-profile{
     width: 90%;
-    height: 90%;
+    height: fit-content;
     padding: 20px;
     border-radius: 10px;
 
-    background-color: blanchedalmond;
+    background-color: rgba(49, 57, 66, 0.7);
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
@@ -92,7 +92,7 @@ main #section4{
 
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
-    grid-template-rows: 20px 1fr 20px 20px;
+    grid-template-rows: 20px 140px 20px 20px;
     grid-gap: 5px;
 }
 
@@ -138,17 +138,19 @@ main #section4{
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 20px);
     grid-gap: 5px;
 
     grid-template-areas: 
         'class level gender'
-        '. . .'
         '. image .'
         'union image world'
         'dojang image guild'
         'popularity name .'
     ;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .main-profile .basic_profile .text-box{
@@ -170,21 +172,36 @@ main #section4{
     grid-area: name;
 
     justify-content: center;
+
+    background-color: #3CC1D7;
+    color: white;
 }
 .main-profile .basic_profile #character_class{
     grid-area: class;
 
     justify-content: center;
+
+    background-color: #9AA2AB;
+    color: white;
 }
 .main-profile .basic_profile #character_lv{
     grid-area: level;
 
     justify-content: center;
+
+    background-color: #9AA2AB;
+    color: white;
+
+    margin: auto;
+
+    border-radius: 0 0 10px 10px;
 }
 .main-profile .basic_profile #character_image{
     grid-area: image;
 
     justify-content: center;
+
+    image-rendering: pixelated;
 }
 .main-profile .basic_profile #character_union{
     grid-area: union;
@@ -200,6 +217,8 @@ main #section4{
 }
 .main-profile .basic_profile #character_gender{
     grid-area: gender;
+
+    margin: auto;
 }
 .main-profile .basic_profile #world_name{
     grid-area: world;
