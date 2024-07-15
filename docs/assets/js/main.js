@@ -173,8 +173,34 @@ function displayCharacterStat(data) {
     footerMP.getElementsByTagName(
       "p"
     )[0].innerText = `${character_mp}/${character_mp}`;
+}
 
-  console.log(data.final_stat);
+function displayCharacterProfile(data) {
+  const characterName = document.getElementById("character_name");
+  const characterLevel = document.getElementById("character_lv");
+  const characterClass = document.getElementById("character_class");
+  const characterImg = document.getElementById("character_image");
+  const characterGender = document.getElementById("character_gender");
+  const characterGuild = document.getElementById("character_guild_name");
+  const characterWorld = document.getElementById("world_name");
+  const characterLastLogin = document.getElementById("character_date_last_play");
+  const characterCreate = document.getElementById("character_date_create");
+  const characterLiberate = document.getElementById("liberation_quest_clear_flag");
+  
+  if (characterName) characterName.innerText = data.character_name;
+  if (characterLevel) characterLevel.innerText = `Lv.${data.character_level}`;
+  if (characterClass) characterClass.innerText = data.character_class;
+  if (characterImg) characterImg.src = data.character_image;
+  if (characterGender) {
+    const isMale = data.character_gender == "남";
+    characterGender.src = isMale ? '../assets/images/icons/male.svg' : '../assets/images/icons/female.svg';
+    characterGender.style.filter = isMale ? 'invert(29%) sepia(88%) saturate(2293%) hue-rotate(170deg) brightness(93%) contrast(95%)' : 'invert(19%) sepia(90%) saturate(3578%) hue-rotate(330deg) brightness(103%) contrast(101%)';
+  }
+  if (characterGuild) characterGuild.getElementsByTagName("span")[0].innerText = data.character_guild_name;
+  if (characterWorld) characterWorld.getElementsByTagName("span")[0].innerText = data.world_name;
+  if (characterLastLogin) characterLastLogin.getElementsByTagName("span")[0].innerText = data.access_flag == "true" ? "접속" : "미접속";
+  if (characterCreate) characterCreate.getElementsByTagName("span")[0].innerText = data.character_date_create;
+  if (characterLiberate) characterLiberate.getElementsByTagName("span")[0].innerText = data.liberation_quest_clear_flag == "true" ? "완료" : "미완료";
 }
 
 // 사용자 기본 정보 조회 API 호출
@@ -198,6 +224,7 @@ async function lookupCharacterInfo(ocid) {
     const data = await response.json();
     // Update retrieved data using the displayCharacterData function
     displayCharacterInfo(data);
+    displayCharacterProfile(data);
   } catch (error) {
     console.error("Error fetching character info data:", error);
   }

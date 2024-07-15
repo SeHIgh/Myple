@@ -21,7 +21,10 @@ main .content-section{
     height: 30vh;
     background-color: transparent;
     
-    /* border: 2px solid #FFF4CC; */
+    padding: 5px;
+    padding-top: 0;
+    
+    border: 2px solid #FFF4CC;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -81,6 +84,8 @@ main #section4{
 
     background-color: blanchedalmond;
 
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
     font-family: 'bitbit';
     font-size: 12px;
     font-weight: normal;
@@ -101,7 +106,7 @@ main #section4{
     border: none;
     border-radius: 5px;
 
-    text-align: left;
+    text-align: center;
 
     display: flex;
     flex-direction: row;
@@ -152,17 +157,34 @@ main #section4{
     backdrop-filter: blur(10px);
 }
 
+.main-profile img{
+    filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
+    
+    border-radius: 50%;
+
+    align-items: center;
+}
+
 .main-profile .basic_profile #character_name{
     grid-area: name;
+
+    justify-content: center;
 }
 .main-profile .basic_profile #character_class{
     grid-area: class;
+
+    justify-content: center;
 }
 .main-profile .basic_profile #character_lv{
     grid-area: level;
+
+    justify-content: center;
 }
 .main-profile .basic_profile #character_image{
     grid-area: image;
+
+    justify-content: center;
 }
 .main-profile .basic_profile #character_union{
     grid-area: union;
