@@ -6,7 +6,7 @@ main{
     padding: 50px;
 
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 30vh 30vh 10vh;
     grid-gap: 5px;
 
@@ -21,9 +21,24 @@ main .content-section{
     height: 30vh;
     background-color: transparent;
     
-    /* border: 2px solid #FFF4CC; */
+    padding: 5px;
+    padding-top: 0;
+    
+    border: 2px solid #FFF4CC;
     border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+main .content-section:hover{
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+main .comming-soon{
+    height: 30vh;
+    background-color: lightslategray;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* main grid 자리 이름 지정 및 할당 */
@@ -32,7 +47,7 @@ main #section1{
 
     height: calc(60vh + 5px);
 
-    background-color: blanchedalmond;
+    background-color: transparent;
 
     display: flex;
     flex-direction: column;
@@ -63,16 +78,148 @@ main #section4{
 
 .main-profile{
     width: 90%;
-    height: 90%;
+    height: fit-content;
+    padding: 20px;
     border-radius: 10px;
 
-    background-color: blanchedalmond;
+    background-color: rgba(49, 57, 66, 0.7);
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    font-family: 'bitbit';
+    font-size: 12px;
+    font-weight: normal;
+
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 20px 140px 20px 20px;
+    grid-gap: 5px;
+}
+
+.main-profile .text-box{
+    width: 100%;
+    height: 20px;
+    padding: 5px;
+
+    background-color: lightgray;
+
+    border: none;
+    border-radius: 5px;
+
+    text-align: center;
 
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-profile #search_date{
+    grid-column: 1/3;
+}
+
+.main-profile .basic_profile{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.main-profile #character_date_create{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+.main-profile .basic_profile{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 20px);
+    grid-gap: 5px;
+
+    grid-template-areas: 
+        'class level gender'
+        '. image .'
+        'union image world'
+        'dojang image guild'
+        'popularity name .'
+    ;
+
     justify-content: center;
     align-items: center;
 }
 
-.main-profile div{
-    background-color: lightgray;
+.main-profile .basic_profile .text-box{
+    border-radius: 40px;
+    background-color: rgba(229, 239, 241, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.main-profile img{
+    filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
+    
+    border-radius: 50%;
+
+    align-items: center;
+}
+
+.main-profile .basic_profile #character_name{
+    grid-area: name;
+
+    justify-content: center;
+
+    background-color: #3CC1D7;
+    color: white;
+}
+.main-profile .basic_profile #character_class{
+    grid-area: class;
+
+    justify-content: center;
+
+    background-color: #9AA2AB;
+    color: white;
+}
+.main-profile .basic_profile #character_lv{
+    grid-area: level;
+
+    justify-content: center;
+
+    background-color: #9AA2AB;
+    color: white;
+
+    margin: auto;
+
+    border-radius: 0 0 10px 10px;
+}
+.main-profile .basic_profile #character_image{
+    grid-area: image;
+
+    justify-content: center;
+
+    image-rendering: pixelated;
+}
+.main-profile .basic_profile #character_union{
+    grid-area: union;
+}
+.main-profile .basic_profile #character_dojang{
+    grid-area: dojang;
+}
+.main-profile .basic_profile #character_popularity{
+    grid-area: popularity;
+}
+.main-profile .basic_profile #character_guild_name{
+    grid-area: guild;
+}
+.main-profile .basic_profile #character_gender{
+    grid-area: gender;
+
+    margin: auto;
+}
+.main-profile .basic_profile #world_name{
+    grid-area: world;
 }

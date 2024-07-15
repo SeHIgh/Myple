@@ -10,6 +10,7 @@
         transform: rotateY(180deg);
     }
 }
+
 @keyframes flip-back {
     0% {
         transform: rotateY(180deg);
@@ -19,26 +20,30 @@
         transform: rotateY(360deg);
     }
 }
+
 /* 원상태로 돌아가는 애니메이션 */
 @keyframes reverse-flip {
     0% {
         transform: rotateY(180deg);
     }
+
     100% {
         transform: rotateY(0);
     }
 }
+
 @keyframes reverse-flip-back {
     0% {
         transform: rotateY(360deg);
     }
+
     100% {
         transform: rotateY(180deg);
     }
 }
 
-button{
-    font-family: 'bitbit';
+button {
+    font-family: "bitbit";
     font-size: 12px;
     font-weight: normal;
     color: #000000;
@@ -99,7 +104,7 @@ main {
     z-index: 2;
 }
 
-.login-box .Logo{
+.login-box .Logo {
     width: 55%;
     height: auto;
     display: flex;
@@ -107,12 +112,12 @@ main {
     align-items: center;
 }
 
-.login-box .Logo a{
+.login-box .Logo a {
     width: 100%;
     height: auto;
 }
 
-.login-box .Logo a img{
+.login-box .Logo a img {
     width: 100%;
     height: auto;
     filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
@@ -130,11 +135,12 @@ main {
     gap: 10px;
 }
 
-.login-box .txt-box .title{
+.login-box .txt-box .title {
     font-size: 22px;
     font-weight: normal;
 }
-.login-box .txt-box .desc{
+
+.login-box .txt-box .desc {
     font-size: 14px;
     font-weight: normal;
 
@@ -165,7 +171,7 @@ main {
     /* background-color: #FFCC33; */
     /* background: linear-gradient(45deg, #FDD75F 40%, #FFEB80); */
     /* border: 2px solid #000000; */
-    border: 2px solid #FFF4CC;
+    border: 2px solid #fff4cc;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
     transition: background-color 0.3s, border-color 0.3s;
@@ -177,7 +183,7 @@ main {
     padding: 0 10px;
     background-color: transparent;
     text-align: center;
-    font-family: 'bitbit';
+    font-family: "bitbit";
     font-size: 16px;
     font-weight: normal;
 
@@ -186,7 +192,7 @@ main {
 }
 
 .login-box .input-cont .input-box:hover {
-    background-color: #F0C030;
+    background-color: #f0c030;
 }
 
 .login-box .input-cont .input-box input:focus {
@@ -232,8 +238,10 @@ main {
 }
 
 #character-preview {
-    grid-column: 1/4; /* 1열부터 3열까지 */
-    grid-row: 1/4; /* 1행부터 3행까지 */
+    grid-column: 1/4;
+    /* 1열부터 3열까지 */
+    grid-row: 1/4;
+    /* 1행부터 3행까지 */
 
     display: grid;
     grid-template-columns: 0.15fr 0.7fr 0.15fr;
@@ -246,6 +254,7 @@ main {
 .flip .login-box {
     animation: flip 0.6s forwards;
 }
+
 .flip #character-preview {
     animation: flip-back 0.6s forwards;
 }
@@ -254,6 +263,7 @@ main {
 .flip-back .login-box {
     animation: reverse-flip 0.6s forwards;
 }
+
 .flip-back #character-preview {
     animation: reverse-flip-back 0.6s forwards;
 }
@@ -271,14 +281,14 @@ main {
     height: 100%;
     margin: auto;
 
-    background: linear-gradient(45deg, #FDD75F 30%, #FFEB80);
+    background: linear-gradient(45deg, #fdd75f 30%, #ffeb80);
 
-    border: 8px double #FFF4CC;
+    border: 8px double #fff4cc;
     border-radius: 10px;
 
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
@@ -327,8 +337,10 @@ main {
     background-color: transparent;
     scale: 2.5;
     filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
-    
-    image-rendering: pixelated; /* 이미지 깨짐 방지 */ /* 크기가 커질 때 깨지는 것을 방지 */
+
+    image-rendering: pixelated;
+    /* 이미지 깨짐 방지 */
+    /* 크기가 커질 때 깨지는 것을 방지 */
 }
 
 #character-preview #character-info-box .character-prev-name {
@@ -375,13 +387,14 @@ main {
     transition: 0.3s ease;
 }
 
-#character-preview #nextBtn{
+#character-preview #nextBtn {
     width: 28px;
     height: 38px;
     grid-column: 3;
     grid-row: 2;
 }
-#character-preview #resetBtn{
+
+#character-preview #resetBtn {
     width: 30px;
     height: 38px;
     grid-column: 2;
@@ -397,6 +410,7 @@ main {
 
     transition: 0.3s ease-in-out;
 }
+
 #character-preview button span {
     font-size: 11px;
 }
@@ -404,6 +418,7 @@ main {
 #character-preview #nextBtn:hover i {
     transform: scale(1.2);
 }
+
 #character-preview #resetBtn:hover i {
     transform: scale(1.2) rotate(-360deg);
 }
