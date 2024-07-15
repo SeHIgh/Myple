@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myple</title>
+    <link rel="stylesheet" href="../assets/css/main.css" type="text/css" />
+    <link
+      rel="icon"
+      href="../assets/images/logos/maple_leaf.png"
+      type="image/png"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myple</title>
-  <link rel="stylesheet" href="../assets/css/main.css" type="text/css">
-  <link rel="icon" href="../assets/images/logos/maple_leaf.png" type="image/png">
-</head>
-
-<body>
-  <!-- <header>
+  <body>
+    <!-- <header>
     <figure class="Logo"><a href="../index.html"><img src="../assets/images/logos/Myple_Logo.png" alt="Logo"></a>
     </figure>
     <div class="header-frame">
@@ -32,35 +35,86 @@
 
   </header> -->
 
-  <main>
-    <section id="section1" class="content-section">
-      <h1>캐릭터 정보</h1>
-      <div class="main-profile"> <!-- 메인 프로필 -->
-        <span id="search_date">검색 일자 : </span> <!-- 검색 날짜 -->
-        <span id="character_name">이름 : </span> <!-- 캐릭터 이름 -->
-        <span id="character_class">직업 : </span> <!-- 캐릭터 직업 -->
-        <span id="character_lv">레벨 : </span> <!-- 캐릭터 레벨 -->
-        <img id="character_image"></img> <!-- 캐릭터 이미지 -->
-        <span id="character_union">유니온 : </span> <!-- 유니온 -->
-        <span id="character_dojang">무릉 : </span> <!-- 무릉 층수 -->
-        <span id="character_popularity">인기도 : </span> <!-- 인기도 -->
-        <span id="character_guild_name">길드 : </span> <!-- 길드 이름 -->
-        <span id="character_gender">성별 : </span> <!-- 성별 -->
-        <span id="world_name">서버 : </span> <!-- 서버 이름 -->
-        <span id="character_date_create">생성일 : </span> <!-- 캐릭터 생성일 -->
-        <span id="character_date_last_play">최근 접속 여부 : </span> <!-- 최근 접속 여부 -->
-        <span id="liberation_quest_clear_flag">해방 여부 : </span>  <!-- 해방 여부 -->
-      </div>
-    </section>
-    <section id="section2" class="comming-soon">COMMING SOON!</section>
-    <section id="section3" class="comming-soon">COOMING SOON!</section>
-    <section id="section4" class="comming-soon">COMMING SOON!</section>
-  </main>
+    <main>
+      <section id="section1" class="content-section">
+        <h1>캐릭터 정보</h1>
+        <!-- 메인 프로필 -->
+        <div class="main-profile">
+          <!-- 검색 날짜 -->
+          <div id="search_date" class="text-box">
+            <p>검색 일자</p>
+            <span></span>
+          </div>
+          
+          <!-- 기본 프로필 -->
+          <div class="basic_profile">
+            <!-- 캐릭터 이름 -->
+            <span id="character_name" class="text-box">이름</span>
+            <!-- 캐릭터 직업 -->
+            <span id="character_class" class="text-box">직업</span>
+            <!-- 캐릭터 레벨 -->
+            <span id="character_lv" class="text-box">Lv.</span>
+            <!-- 캐릭터 이미지 -->
+            <img id="character_image" />
+            <!-- 유니온 -->
+            <div id="character_union" class="text-box">
+              <p>유니온</p>
+              <span></span>
+            </div>
+            <!-- 무릉 층수 -->
+            <div id="character_dojang" class="text-box">
+              <p>무릉</p>
+              <span></span>
+            </div>
+            <!-- 인기도 -->
+            <div id="character_popularity" class="text-box">
+              <p>인기도</p>
+              <span></span>
+            </div>
+            <!-- 길드 이름 -->
+            <div id="character_guild_name" class="text-box">
+              <p>길드</p>
+              <span></span>
+            </div>
+            <!-- 성별 -->
+            <div id="character_gender" class="text-box">
+              <p>성별</p>
+              <span></span>
+            </div>
+            <!-- 서버 이름 -->
+            <div id="world_name" class="text-box">
+              <p>서버</p>
+              <span></span>
+            </div>
+          </div>
+          <!-- 캐릭터 생성일 -->
+          <div id="character_date_create" class="text-box">
+            <p>생성일</p>
+            <span></span>
+          </div>
+          <!-- 최근 접속 여부 -->
+          <div id="character_date_last_play" class="text-box">
+            <p>최근 접속 여부</p>
+            <span></span>
+          </div>
+          <!-- 해방 여부 -->
+          <div id="liberation_quest_clear_flag" class="text-box">
+            <p>해방 여부</p>
+            <span></span>
+          </div>
+        </div>
+      </section>
+      <section id="section2" class="comming-soon">COMMING SOON!</section>
+      <section id="section3" class="comming-soon">COOMING SOON!</section>
+      <section id="section4" class="comming-soon">COMMING SOON!</section>
+    </main>
 
-  <footer id="footer-placeholder"></footer>
+    <footer id="footer-placeholder"></footer>
 
-  <script src="../assets/js/main.js"></script>
-  <script src="https://kit.fontawesome.com/47a5d4bea1.js" crossorigin="anonymous"></script>
-</body>
-
+    <script src="../assets/js/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47a5d4bea1.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -6,7 +6,7 @@ main{
     padding: 50px;
 
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 30vh 30vh 10vh;
     grid-gap: 5px;
 
@@ -44,7 +44,7 @@ main #section1{
 
     height: calc(60vh + 5px);
 
-    background-color: blanchedalmond;
+    background-color: transparent;
 
     display: flex;
     flex-direction: column;
@@ -86,31 +86,99 @@ main #section4{
     font-weight: normal;
 
     display: grid;
-    grid-template-columns: 0.4fr 0.6fr;
-    grid-template-rows: repeat(13, 1fr);
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 20px 1fr 20px 20px;
     grid-gap: 5px;
 }
 
-.main-profile span, img{
+.main-profile .text-box{
     width: 100%;
-    height: 100%;
-    line-height: 15px;
+    height: 20px;
+    padding: 5px;
+
     background-color: lightgray;
 
     border: none;
     border-radius: 5px;
 
     text-align: left;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-profile #search_date{
     grid-column: 1/3;
-    width: 100%;
 }
 
-.main-profile #character_image{
-    grid-column: 2/3;
-    grid-row: 2/14;
+.main-profile .basic_profile{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.main-profile #character_date_create{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+.main-profile .basic_profile{
     width: 100%;
     height: 100%;
+    padding: 10px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+
+    grid-template-areas: 
+        'class level gender'
+        '. . .'
+        '. image .'
+        'union image world'
+        'dojang image guild'
+        'popularity name .'
+    ;
+}
+
+.main-profile .basic_profile .text-box{
+    border-radius: 40px;
+    background-color: rgba(229, 239, 241, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.main-profile .basic_profile #character_name{
+    grid-area: name;
+}
+.main-profile .basic_profile #character_class{
+    grid-area: class;
+}
+.main-profile .basic_profile #character_lv{
+    grid-area: level;
+}
+.main-profile .basic_profile #character_image{
+    grid-area: image;
+}
+.main-profile .basic_profile #character_union{
+    grid-area: union;
+}
+.main-profile .basic_profile #character_dojang{
+    grid-area: dojang;
+}
+.main-profile .basic_profile #character_popularity{
+    grid-area: popularity;
+}
+.main-profile .basic_profile #character_guild_name{
+    grid-area: guild;
+}
+.main-profile .basic_profile #character_gender{
+    grid-area: gender;
+}
+.main-profile .basic_profile #world_name{
+    grid-area: world;
 }
