@@ -1,0 +1,21 @@
+{
+  "date": null,
+  "character_gender": "남",
+  "character_class": "에반",
+  "character_hair": {
+    "hair_name": "갈색 리커버 헤어",
+    "base_color": "갈색",
+    "mix_color": "초록색",
+    "mix_rate": "50"
+  },
+  "character_face": {
+    "face_name": "냉소적인 아잉 얼굴",
+    "base_color": "검은색",
+    "mix_color": "갈색",
+    "mix_rate": "50"
+  },
+  "character_skin_name": "크림 피부",
+  "additional_character_hair": null,
+  "additional_character_face": null,
+  "additional_character_skin_name": null
+}

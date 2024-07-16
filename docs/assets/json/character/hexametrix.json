@@ -1,0 +1,54 @@
+{
+  "date": null,
+  "character_hexa_core_equipment": [
+    {
+      "hexa_core_name": "조디악 버스트",
+      "hexa_core_level": 1,
+      "hexa_core_type": "스킬 코어",
+      "linked_skill": [
+        {
+          "hexa_skill_id": "조디악 버스트"
+        }
+      ]
+    },
+    {
+      "hexa_core_name": "서클 오브 마나 VI",
+      "hexa_core_level": 1,
+      "hexa_core_type": "마스터리 코어",
+      "linked_skill": [
+        {
+          "hexa_skill_id": "서클 오브 마나 VI"
+        }
+      ]
+    },
+    {
+      "hexa_core_name": "드래곤 스위프트 VI/서클 오브 썬더 VI/스위프트 오브 썬더 VI/스위프트 오브 윈드 VI",
+      "hexa_core_level": 1,
+      "hexa_core_type": "마스터리 코어",
+      "linked_skill": [
+        {
+          "hexa_skill_id": "드래곤 스위프트 VI"
+        },
+        {
+          "hexa_skill_id": "서클 오브 썬더 VI"
+        },
+        {
+          "hexa_skill_id": "스위프트 오브 썬더 VI"
+        },
+        {
+          "hexa_skill_id": "스위프트 오브 윈드 VI"
+        }
+      ]
+    },
+    {
+      "hexa_core_name": "솔 야누스",
+      "hexa_core_level": 1,
+      "hexa_core_type": "공용 코어",
+      "linked_skill": [
+        {
+          "hexa_skill_id": "솔 야누스"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "date": null,
+  "character_class": "에반",
+  "character_v_core_equipment": [
+    {
+      "slot_id": "0",
+      "slot_level": 5,
+      "v_core_name": "마나와 바람의 마법 잔해",
+      "v_core_level": 22,
+      "v_core_skill_1": "마법 잔해 강화",
+      "v_core_skill_2": "서클 오브 마나 강화",
+      "v_core_skill_3": "서클 오브 윈드 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "1",
+      "slot_level": 5,
+      "v_core_name": "대지와 뇌격의 드래곤 브레스",
+      "v_core_level": 21,
+      "v_core_skill_1": "드래곤 브레스 강화",
+      "v_core_skill_2": "서클 오브 어스 강화",
+      "v_core_skill_3": "서클 오브 썬더 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "2",
+      "slot_level": 5,
+      "v_core_name": "대지와 바람의 서클 오브 썬더",
+      "v_core_level": 21,
+      "v_core_skill_1": "서클 오브 썬더 강화",
+      "v_core_skill_2": "서클 오브 어스 강화",
+      "v_core_skill_3": "서클 오브 윈드 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "3",
+      "slot_level": 5,
+      "v_core_name": "숨결과 잔해의 서클 오브 마나",
+      "v_core_level": 21,
+      "v_core_skill_1": "서클 오브 마나 강화",
+      "v_core_skill_2": "드래곤 브레스 강화",
+      "v_core_skill_3": "마법 잔해 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "4",
+      "slot_level": 5,
+      "v_core_name": "쓸만한 홀리 심볼",
+      "v_core_level": 25,
+      "v_core_skill_1": "쓸만한 홀리 심볼",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "5",
+      "slot_level": 5,
+      "v_core_name": "조디악 레이",
+      "v_core_level": 25,
+      "v_core_skill_1": "조디악 레이",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "6",
+      "slot_level": 5,
+      "v_core_name": "드래곤 브레이크",
+      "v_core_level": 25,
+      "v_core_skill_1": "드래곤 브레이크",
+      "v_core_skill_2": "임페리얼 브레스",
+      "v_core_skill_3": "브레이크-돌아와!",
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "7",
+      "slot_level": 5,
+      "v_core_name": "스파이럴 오브 마나",
+      "v_core_level": 25,
+      "v_core_skill_1": "스파이럴 오브 마나",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "8",
+      "slot_level": 5,
+      "v_core_name": "메이플월드 여신의 축복",
+      "v_core_level": 25,
+      "v_core_skill_1": "메이플월드 여신의 축복",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "9",
+      "slot_level": 5,
+      "v_core_name": "엘리멘탈 블래스트",
+      "v_core_level": 11,
+      "v_core_skill_1": "엘리멘탈 블래스트",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "10",
+      "slot_level": 5,
+      "v_core_name": "스파이더 인 미러",
+      "v_core_level": 1,
+      "v_core_skill_1": "스파이더 인 미러",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "11",
+      "slot_level": 5,
+      "v_core_name": "오버로드 마나",
+      "v_core_level": 4,
+      "v_core_skill_1": "오버로드 마나",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "12",
+      "slot_level": 5,
+      "v_core_name": "프리드의 가호",
+      "v_core_level": 6,
+      "v_core_skill_1": "프리드의 가호",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "13",
+      "slot_level": 5,
+      "v_core_name": "블링크",
+      "v_core_level": 15,
+      "v_core_skill_1": "블링크",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "14",
+      "slot_level": 5,
+      "v_core_name": "에르다 샤워",
+      "v_core_level": 13,
+      "v_core_skill_1": "에르다 샤워",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "15",
+      "slot_level": 5,
+      "v_core_name": "로프 커넥트",
+      "v_core_level": 8,
+      "v_core_skill_1": "로프 커넥트",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "16",
+      "slot_level": 5,
+      "v_core_name": "에르다의 의지",
+      "v_core_level": 12,
+      "v_core_skill_1": "에르다의 의지",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "17",
+      "slot_level": 5,
+      "v_core_name": "에테리얼 폼",
+      "v_core_level": 7,
+      "v_core_skill_1": "에테리얼 폼",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "18",
+      "slot_level": 5,
+      "v_core_name": "바람과 신속의 서클 오브 어스",
+      "v_core_level": 9,
+      "v_core_skill_1": "서클 오브 어스 강화",
+      "v_core_skill_2": "서클 오브 윈드 강화",
+      "v_core_skill_3": "드래곤 스위프트 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "19",
+      "slot_level": 5,
+      "v_core_name": "크레스트 오브 더 솔라",
+      "v_core_level": 1,
+      "v_core_skill_1": "크레스트 오브 더 솔라",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "20",
+      "slot_level": 0,
+      "v_core_name": "에르다 노바",
+      "v_core_level": 12,
+      "v_core_skill_1": "에르다 노바",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "21",
+      "slot_level": 0,
+      "v_core_name": "쓸만한 윈드 부스터",
+      "v_core_level": 1,
+      "v_core_skill_1": "쓸만한 윈드 부스터",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "22",
+      "slot_level": 0,
+      "v_core_name": "쓸만한 샤프 아이즈",
+      "v_core_level": 2,
+      "v_core_skill_1": "쓸만한 샤프 아이즈",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "23",
+      "slot_level": 0,
+      "v_core_name": "쓸만한 어드밴스드 블레스",
+      "v_core_level": 3,
+      "v_core_skill_1": "쓸만한 어드밴스드 블레스",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "24",
+      "slot_level": 0,
+      "v_core_name": "쓸만한 컴뱃 오더스",
+      "v_core_level": 1,
+      "v_core_skill_1": "쓸만한 컴뱃 오더스",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "25",
+      "slot_level": 0,
+      "v_core_name": "쓸만한 미스틱 도어",
+      "v_core_level": 1,
+      "v_core_skill_1": "쓸만한 미스틱 도어",
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": "스킬코어"
+    },
+    {
+      "slot_id": "26",
+      "slot_level": 0,
+      "v_core_name": "불빛과 신속의 드래곤 다이브",
+      "v_core_level": 18,
+      "v_core_skill_1": "드래곤 다이브 강화",
+      "v_core_skill_2": "드래곤 스파킹 강화",
+      "v_core_skill_3": "드래곤 스위프트 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "27",
+      "slot_level": 0,
+      "v_core_name": "불빛과 비룡의 드래곤 스위프트",
+      "v_core_level": 17,
+      "v_core_skill_1": "드래곤 스위프트 강화",
+      "v_core_skill_2": "드래곤 스파킹 강화",
+      "v_core_skill_3": "드래곤 다이브 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "28",
+      "slot_level": 0,
+      "v_core_name": "비룡과 신속의 드래곤 스파킹",
+      "v_core_level": 12,
+      "v_core_skill_1": "드래곤 스파킹 강화",
+      "v_core_skill_2": "드래곤 다이브 강화",
+      "v_core_skill_3": "드래곤 스위프트 강화",
+      "v_core_type": "강화코어"
+    },
+    {
+      "slot_id": "29",
+      "slot_level": 0,
+      "v_core_name": null,
+      "v_core_level": 0,
+      "v_core_skill_1": null,
+      "v_core_skill_2": null,
+      "v_core_skill_3": null,
+      "v_core_type": null
+    }
+  ],
+  "character_v_matrix_remain_slot_upgrade_point": 0
+}

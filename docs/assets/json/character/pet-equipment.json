@@ -1,0 +1,104 @@
+{
+  "date": null,
+  "pet_1_name": "솜사탕핑크빈",
+  "pet_1_nickname": "솜사탕핑크빈",
+  "pet_1_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KAPCJCOB.png",
+  "pet_1_description": "달콤한 솜사탕으로 변신한 솜사탕핑크빈입니다.\n솜사탕핑크빈 펫은 달빛의 힘으로 더욱 넓은 영역의 아이템을 획득할 수 있습니다.\n솜사탕핑크빈 펫은 모든 펫 장비를 착용할 수 없습니다.\n마법의 시간이 끝난 솜사탕핑크빈 펫을 더블클릭하면 소멸합니다.\n\n주의! 이 펫은 마법의 시간이 끝나더라도 마법의 시간을 연장할 수 없습니다.",
+  "pet_1_equipment": {
+    "item_name": null,
+    "item_icon": null,
+    "item_description": null,
+    "item_option": [],
+    "scroll_upgrade": 0,
+    "scroll_upgradable": 0,
+    "item_shape": null,
+    "item_shape_icon": null
+  },
+  "pet_1_auto_skill": {
+    "skill_1": "오닉스의 축복",
+    "skill_1_icon": "https://open.api.nexon.com/static/maplestory/SkillIcon/KFNAKAPBLD.png",
+    "skill_2": "쓸만한 컴뱃 오더스",
+    "skill_2_icon": "https://open.api.nexon.com/static/maplestory/SkillIcon/KBPCLHPBME.png"
+  },
+  "pet_1_pet_type": "루나 쁘띠",
+  "pet_1_skill": [
+    "아이템 줍기",
+    "자동 줍기",
+    "HP 물약충전",
+    "MP 물약충전",
+    "버프 스킬 자동 사용"
+  ],
+  "pet_1_date_expire": "2024-07-20T18:00+09:00",
+  "pet_1_appearance": "솜사탕핑크빈",
+  "pet_1_appearance_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KAPCJCOB.png",
+  "pet_2_name": "아기 하마",
+  "pet_2_nickname": "아기 하마",
+  "pet_2_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KAPCJBNG.png",
+  "pet_2_description": "엉뚱 발랄 호기심이 많은 아기 하마입니다.\n아기 동물 친구 펫을 장착하면 동물 친구야 놀자 스킬을 얻게 되며, 장착한 아기 동물 친구 펫의 종류가 많을수록 해당 스킬은 강화됩니다.",
+  "pet_2_equipment": {
+    "item_name": "아기 하마의 공",
+    "item_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KEHCIHMB.png",
+    "item_description": "아기 하마가 가장 좋아하는 공놀이를 함께 즐길 수 있다.",
+    "item_option": [
+      {
+        "option_type": "공격력",
+        "option_value": "5"
+      },
+      {
+        "option_type": "마력",
+        "option_value": "25"
+      }
+    ],
+    "scroll_upgrade": 5,
+    "scroll_upgradable": 4,
+    "item_shape": "아기 하마의 공",
+    "item_shape_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KEHCIHMB.png"
+  },
+  "pet_2_auto_skill": {
+    "skill_1": "쓸만한 샤프 아이즈",
+    "skill_1_icon": "https://open.api.nexon.com/static/maplestory/SkillIcon/KBPCLHPBMC.png",
+    "skill_2": "쓸만한 윈드 부스터",
+    "skill_2_icon": "https://open.api.nexon.com/static/maplestory/SkillIcon/KBPCLHPBMG.png"
+  },
+  "pet_2_pet_type": "루나 드림",
+  "pet_2_skill": [
+    "아이템 줍기",
+    "자동 줍기",
+    "MP 물약충전",
+    "버프 스킬 자동 사용",
+    "펫 훈련 스킬"
+  ],
+  "pet_2_date_expire": "2024-08-31T17:00+09:00",
+  "pet_2_appearance": "아기 하마",
+  "pet_2_appearance_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KAPCJBNG.png",
+  "pet_3_name": "아기 늑대",
+  "pet_3_nickname": "아기 늑대",
+  "pet_3_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KAPCJBNJ.png",
+  "pet_3_description": "소심하지만 혼자 있을 때에는 재기발랄한 아기 늑대입니다.\n아기 동물 친구 펫을 장착하면 동물 친구야 놀자 스킬을 얻게 되며, 장착한 아기 동물 친구 펫의 종류가 많을수록 해당 스킬은 강화됩니다.",
+  "pet_3_equipment": {
+    "item_name": null,
+    "item_icon": null,
+    "item_description": null,
+    "item_option": [],
+    "scroll_upgrade": 0,
+    "scroll_upgradable": 0,
+    "item_shape": null,
+    "item_shape_icon": null
+  },
+  "pet_3_auto_skill": {
+    "skill_1": "쓸만한 어드밴스드 블레스",
+    "skill_1_icon": "https://open.api.nexon.com/static/maplestory/SkillIcon/KBPCLHPBMF.png",
+    "skill_2": "쓸만한 홀리 심볼",
+    "skill_2_icon": "https://open.api.nexon.com/static/maplestory/SkillIcon/KBPCLHPBOA.png"
+  },
+  "pet_3_pet_type": "루나 드림",
+  "pet_3_skill": [
+    "아이템 줍기",
+    "자동 줍기",
+    "버프 스킬 자동 사용",
+    "펫 훈련 스킬"
+  ],
+  "pet_3_date_expire": "2024-08-31T02:00+09:00",
+  "pet_3_appearance": "아기 늑대",
+  "pet_3_appearance_icon": "https://open.api.nexon.com/static/maplestory/ItemIcon/KAPCJBNJ.png"
+}

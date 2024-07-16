@@ -1,0 +1,4 @@
+curl -X 'GET' \
+  'https://open.api.nexon.com/maplestory/v1/character/link-skill?ocid=9d4fc124b5d4416bd2dd67f584809305' \
+  -H 'accept: application/json' \
+  -H 'x-nxopen-api-key: test_cf92cd14930e08e300ab26408fc39a0423307bfeffb68e8601913d93e8ed7f36efe8d04e6d233bd35cf2fabdeb93fb0d'
