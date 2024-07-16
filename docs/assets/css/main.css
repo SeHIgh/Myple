@@ -6,7 +6,7 @@ main{
     padding: 50px;
 
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 0.65fr 0.35fr;
     grid-template-rows: 30vh 30vh 10vh;
     grid-gap: 5px;
 
@@ -46,13 +46,17 @@ main #section1{
     grid-area: profile;
 
     height: calc(60vh + 5px);
+    padding: 10px;
 
     background-color: transparent;
 
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: start;
+    gap: 10px;
     align-items: center;
+    
 }
 
 main #section2{
@@ -72,13 +76,16 @@ main #section4{
 /* section1 - PROFILE */
 
 #section1 h1{
+    width: 100%;
+    height: auto;
     font-size: 1rem;
     font-weight: normal;
+    text-align: center;
 }
 
 .main-profile{
     width: 90%;
-    height: fit-content;
+    flex-grow: 1;
     padding: 20px;
     border-radius: 10px;
 
@@ -160,6 +167,9 @@ main #section4{
 }
 
 .main-profile img{
+    width: auto;
+    height: 100%;
+
     filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
     -webkit-filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
     
@@ -199,9 +209,11 @@ main #section4{
 .main-profile .basic_profile #character_image{
     grid-area: image;
 
-    justify-content: center;
+    margin: auto;
 
     image-rendering: pixelated;
+
+    justify-content: center;
 }
 .main-profile .basic_profile #character_union{
     grid-area: union;
