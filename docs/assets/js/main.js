@@ -1,6 +1,6 @@
 // main.js
 
-import { getApiKey, lookupCharacterInfo, lookupCharacterStat } from '../api/nexonOpenApi.js';
+import * as nexonApi from '../api/nexonOpenApi.js';
 
 // Function to include HTML files with callback
 async function includeHTML(id, url) {
@@ -211,13 +211,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (ocid) {
         // Fetch character data using ocid
-        const characterInfo = await lookupCharacterInfo(ocid);
+        const characterInfo = await nexonApi.lookupCharacterInfo(ocid);
         if (characterInfo) {
             displayCharacterInfo(characterInfo);
             displayCharacterProfile(characterInfo);
         }
 
-        const characterStat = await lookupCharacterStat(ocid);
+        const characterStat = await nexonApi.lookupCharacterStat(ocid);
+        if (characterStat) {
+            displayCharacterStat(characterStat);
+        }
+        
+        const characterUnion = await nexonApi.lookupCharacterUnion(ocid);
         if (characterStat) {
             displayCharacterStat(characterStat);
         }

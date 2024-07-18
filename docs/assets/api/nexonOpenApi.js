@@ -364,3 +364,29 @@ export async function lookupCharacterDojang(ocid) {
     return null;
   }
 }
+
+// 사용자 유니온 정보 조회 API 호출
+export async function lookupCharacterUnion(ocid) {
+  try {
+    const apiKey = await getApiKey();
+    if (!apiKey) return null; // Exit if API key is not available
+
+    const url = `https://open.api.nexon.com/maplestory/v1/user/union?ocid=${ocid}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "x-nxopen-api-key": apiKey,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching character dojang data:", error);
+    return null;
+  }
+}
