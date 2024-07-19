@@ -251,11 +251,11 @@ main #section4 {
 }
 
 .main-profile img {
-    height: 100%;
-    width: auto;
+    /* height: 100%;
+    width: auto; */
 
-    filter: drop-shadow(0.5rem 0.5rem 0.25rem rgba(0, 0, 0, 0.5));
-    -webkit-filter: drop-shadow(0.5rem 0.5rem 0.25rem rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px 2px 1.5px rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(2px 2px 1.5px rgba(0, 0, 0, 0.5));
 
     border-radius: 50%;
 
@@ -296,8 +296,8 @@ main #section4 {
 .main-profile .basic_profile #character_image {
     grid-area: image;
 
-    width: auto;
-    height: 100%;
+    /* width: auto;
+    height: 100%; */
 
     margin: auto;
 
@@ -506,11 +506,8 @@ main #section4 {
     }
     
     .main-profile .basic_profile #character_image {
-        /* width: auto;
-        height: 100%; */
-        /* max-height: 10rem; 상대적인 최대 높이 */
         filter: drop-shadow(0.125rem 0.125rem 0.03125rem rgba(0, 0, 0, 0.5));
-        align-items: center;
+        /* align-items: center; */
     }
     
     .main-profile .basic_profile #character_name,
