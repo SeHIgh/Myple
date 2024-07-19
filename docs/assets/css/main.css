@@ -485,8 +485,10 @@ main #section4 {
         background-color: white;
         border-radius: 0.5rem; /* 상대적인 border-radius */
         display: grid;
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto repeat(4, auto);
+        /* grid-template-rows: auto auto repeat(4, auto); */
+        grid-template-rows: 20px, 40px, repeat(4, 20px); /* 상대적인 높이 */
         grid-gap: 0.5rem 2rem; /* 상대적인 grid-gap */
         grid-template-areas:
             'class level gender'
@@ -505,9 +507,13 @@ main #section4 {
         color: #3E6076;
     }
     
-    .main-profile .basic_profile #character_image {
-        filter: drop-shadow(0.125rem 0.125rem 0.03125rem rgba(0, 0, 0, 0.5));
-        /* align-items: center; */
+    .main-profile .basic_profile img {
+        height: 100%; /* 높이에 기준을 둠 */
+        width: auto; /* 비율 유지 */
+        filter: drop-shadow(0.5rem 0.5rem 0.125rem rgba(0, 0, 0, 0.5));
+        -webkit-filter: drop-shadow(0.5rem 0.5rem 0.125rem rgba(0, 0, 0, 0.5));
+        border-radius: 50%;
+        align-items: center;
     }
     
     .main-profile .basic_profile #character_name,
