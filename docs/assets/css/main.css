@@ -517,6 +517,11 @@ main #section4 {
         border-radius: 50%;
         align-items: center;
     }
+
+    .main-profile .basic_profile #character_gender{
+        max-width: 24px;
+        max-height: 24px;
+    }
     
     .main-profile .basic_profile #character_name,
     .main-profile .basic_profile #character_class,
