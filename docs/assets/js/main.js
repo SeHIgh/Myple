@@ -318,6 +318,7 @@ function displayCharacterProfile(data) {
           let formattedValue = formatKoreanNumber(value);
           console.log(formattedValue); // 디버그를 위해 결과 출력
           // 여기서 formattedValue를 사용하여 다음 작업을 수행할 수 있습니다.
+          element.getElementsByTagName("span")[0].innerText = formattedValue;
         }
       }
     }

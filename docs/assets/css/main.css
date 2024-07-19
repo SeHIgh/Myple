@@ -1,40 +1,90 @@
 @import url(./layouts.css);
 
-main{
+body {
     width: 100%;
-    height: 100vh;
-    padding: 50px;
+    height: auto;
+
+    background-color: #FFCC33;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* header에 body의 padding 안 먹는 이유 
+    -> 이전 레이아웃 css파일에 position absolute로 해둬서...*/
+header{
+    /* 레이아웃 무시 하고 부모 포지션 상속 */
+    position: inherit;
+
+    width: 100%;
+    height: 70px;
+    min-height: 0;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: transparent;
+}
+
+header .logo{
+    width: auto;
+    height: 50px;
+}
+
+header .logo a{
+    width: 100%;
+    height: 100%;
+}
+
+header .logo a img{
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: fit-content;
+    height: fit-content;
 
     display: grid;
-    grid-template-columns: 0.65fr 0.35fr;
-    grid-template-rows: 30vh 30vh 10vh;
+    grid-template-columns: 464px 250px;
+    grid-template-rows: 192px 192px 96px;
     grid-gap: 5px;
 
-    grid-template-areas: 
+    grid-template-areas:
         'profile skills'
         'profile contact'
         'projects projects'
     ;
+
+    transition: all 0.5s;
 }
 
-main .content-section{
-    height: 30vh;
+main .content-section {
+    width: 250px;
+    height: 100%;
     background-color: transparent;
-    
+
     padding: 5px;
     padding-top: 0;
-    
+
     border: 2px solid #FFF4CC;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-main .content-section:hover{
+main .content-section:hover {
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-main .comming-soon{
-    height: 30vh;
+main .comming-soon {
+    width: 100%;
+    height: 100%;
     background-color: lightslategray;
 
     border-radius: 10px;
@@ -42,10 +92,13 @@ main .comming-soon{
 }
 
 /* main grid 자리 이름 지정 및 할당 */
-main #section1{
+main #section1 {
     grid-area: profile;
 
-    height: calc(60vh + 5px);
+    /* h : 320px + 23.5px + 10px */
+    width: 464px;
+    /* h : 320px + 23.5px + 10px + 20px */
+    height: 383.5px;
     padding: 10px;
 
     background-color: transparent;
@@ -53,38 +106,37 @@ main #section1{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     gap: 10px;
     align-items: center;
-    
 }
 
-main #section2{
+main #section2 {
     grid-area: skills;
 }
 
-main #section3{
-    grid-area: projects;
-
-    height: 10vh;
+main #section3 {
+    grid-area: contact;
 }
 
-main #section4{
-    grid-area: contact;
+main #section4 {
+    grid-area: projects;
 }
 
 /* section1 - PROFILE */
 
-#section1 h1{
+#section1 h1 {
     width: 100%;
-    height: auto;
-    font-size: 1rem;
+    height: fit-content;
+    font-size: 16px;
+
     font-weight: normal;
     text-align: center;
 }
 
-.main-profile{
-    width: 90%;
+.main-profile {
+    width: 444px;
+    height: 320px;
     flex-grow: 1;
     padding: 20px;
     border-radius: 10px;
@@ -103,7 +155,7 @@ main #section4{
     grid-gap: 5px;
 }
 
-.main-profile .text-box{
+.main-profile .text-box {
     width: 100%;
     height: 20px;
     padding: 0 10px;
@@ -122,16 +174,16 @@ main #section4{
     align-items: center;
 }
 
-.main-profile #search_date{
+.main-profile #search_date {
     grid-column: span 2;
 }
 
-.main-profile .basic_profile{
+.main-profile .basic_profile {
     grid-column: 1/3;
     grid-row: 2/3;
 }
 
-.main-profile #character_CP{
+.main-profile #character_CP {
     height: 30px;
 
     grid-column: span 2;
@@ -145,24 +197,27 @@ main #section4{
     justify-content: space-between;
 }
 
-.main-profile #character_CP span{
-    flex-grow: 1; 
+.main-profile #character_CP span {
+    flex-grow: 1;
     color: #FFF9D1;
 }
+
 /* span 중간 표시를 위한 빈박스 */
-.main-profile #character_CP .empty{
+.main-profile #character_CP .empty {
     width: 38.41px;
     color: #FFF9D1;
 }
 
-.main-profile #character_date_create{
+.main-profile #character_date_create {
     grid-column: span 2;
     grid-row: 5 / span 1;
 }
 
-.main-profile .basic_profile{
+.main-profile .basic_profile {
     width: 100%;
-    height: 100%;
+    /* display w:900 기준 */
+    width: 404px;
+    height: fit-content;
     padding: 10px;
 
     background-color: white;
@@ -170,10 +225,10 @@ main #section4{
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 20px, 40px ,repeat(4, 20px);
+    grid-template-rows: 20px, 40px, repeat(4, 20px);
     grid-gap: 5px 40px;
 
-    grid-template-areas: 
+    grid-template-areas:
         'class level gender'
         '. image .'
         'union image world'
@@ -185,26 +240,26 @@ main #section4{
     align-items: center;
 }
 
-.main-profile .basic_profile .text-box{
+.main-profile .basic_profile .text-box {
     border-radius: 40px;
     background-color: rgba(229, 239, 241, 0.6);
     backdrop-filter: blur(10px);
     color: #3E6076;
 }
 
-.main-profile img{
+.main-profile img {
     width: auto;
     height: 100%;
 
     filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
     -webkit-filter: drop-shadow(2px 2px 0.5px rgba(0, 0, 0, 0.5));
-    
+
     border-radius: 50%;
 
     align-items: center;
 }
 
-.main-profile .basic_profile #character_name{
+.main-profile .basic_profile #character_name {
     grid-area: name;
 
     justify-content: center;
@@ -212,7 +267,8 @@ main #section4{
     background-color: #3CC1D7;
     color: white;
 }
-.main-profile .basic_profile #character_class{
+
+.main-profile .basic_profile #character_class {
     grid-area: class;
 
     justify-content: center;
@@ -220,7 +276,8 @@ main #section4{
     background-color: #9AA2AB;
     color: white;
 }
-.main-profile .basic_profile #character_lv{
+
+.main-profile .basic_profile #character_lv {
     grid-area: level;
 
     justify-content: center;
@@ -232,7 +289,8 @@ main #section4{
 
     border-radius: 0 0 10px 10px;
 }
-.main-profile .basic_profile #character_image{
+
+.main-profile .basic_profile #character_image {
     grid-area: image;
 
     margin: auto;
@@ -241,23 +299,243 @@ main #section4{
 
     justify-content: center;
 }
-.main-profile .basic_profile #character_union{
+
+.main-profile .basic_profile #character_union {
     grid-area: union;
 }
-.main-profile .basic_profile #character_dojang{
+
+.main-profile .basic_profile #character_dojang {
     grid-area: dojang;
 }
-.main-profile .basic_profile #character_popularity{
+
+.main-profile .basic_profile #character_popularity {
     grid-area: popularity;
 }
-.main-profile .basic_profile #character_guild_name{
+
+.main-profile .basic_profile #character_guild_name {
     grid-area: guild;
 }
-.main-profile .basic_profile #character_gender{
+
+.main-profile .basic_profile #character_gender {
     grid-area: gender;
 
     margin: auto;
 }
-.main-profile .basic_profile #world_name{
+
+.main-profile .basic_profile #world_name {
     grid-area: world;
+}
+
+/* Responsive View */
+
+/* 대형 데스크탑 */
+@media only screen and (min-width: 1280px) {
+    /* basic */
+}
+
+/* 소형 데스크탑 */
+@media only screen and (min-width: 960px) and (max-width: 1279px) {
+    /* basic */
+}
+
+/* 태블릿 */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        /* grid-template-columns: 464px 250px;
+        grid-template-rows: 192px 192px 96px; */
+    }
+    
+    main .comming-soon {
+        width: 100%;
+        height: 192px;
+        background-color: lightslategray;
+    
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    /* main grid 자리 이름 지정 및 할당 */
+    main #section1 {
+        grid-area: profile;
+    
+        /* h : 320px + 23.5px + 10px */
+        width: 464px;
+        /* h : 320px + 23.5px + 10px + 20px */
+        height: 383.5px;
+        padding: 10px;
+    
+        background-color: transparent;
+    
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+    }
+
+    main #section4 {
+        height: 96px;
+    }
+}
+
+
+/* 모바일 */
+@media only screen and (max-width: 599px) {
+    /* = tablet */
+    header {
+        justify-content: center;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        /* grid-template-columns: 464px 250px;
+        grid-template-rows: 192px 192px 96px; */
+    }
+    
+    main .comming-soon {
+        width: 95vw;
+        height: 192px;
+        background-color: lightslategray;
+    
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    /* main grid 자리 이름 지정 및 할당 */
+    main #section1 {
+        grid-area: profile;
+    
+        /* h : 320px + 23.5px + 10px */
+        width: 95vw;
+        /* h : 320px + 23.5px + 10px + 20px */
+        height: 383.5px;
+        padding: 0.4rem;
+    
+        background-color: transparent;
+    
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.4rem;
+        align-items: center;
+    }
+
+    main #section4 {
+        height: 96px;
+    }
+
+    .main-profile {
+        width: 95%; /* Viewport Width를 사용하여 상대적인 크기로 조정 */
+        max-width: 444px; /* 최대 너비를 지정하여 큰 화면에서 너무 커지지 않도록 */
+        height: auto; /* 높이는 내용에 따라 자동으로 조정 */
+        padding: 0.5rem; /* 상대적인 패딩 */
+        border-radius: 0.5rem; /* 상대적인 border-radius */
+        background-color: rgba(49, 57, 66, 0.7);
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        font-family: 'bitbit';
+        font-size: 0.6rem; /* 기본 글꼴 크기를 rem 단위로 */
+        font-weight: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; /* 상대적인 간격 */
+    }
+    
+    .main-profile .text-box {
+        width: 100%;
+        padding: 0 0.5rem; /* 상대적인 padding */
+        background-color: #6C7785;
+        color: #E8EFF5;
+        border: none;
+        border-radius: 0.5rem; /* 상대적인 border-radius */
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .main-profile #search_date,
+    .main-profile #character_CP,
+    .main-profile #character_date_create {
+        grid-column: span 2;
+    }
+    
+    .main-profile .basic_profile {
+        width: 100%;
+        grid-column: 1/3;
+        padding: 0.5rem; /* 상대적인 padding */
+        background-color: white;
+        border-radius: 0.5rem; /* 상대적인 border-radius */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto repeat(4, auto);
+        grid-gap: 0.5rem 2rem; /* 상대적인 grid-gap */
+        grid-template-areas:
+            'class level gender'
+            '. image .'
+            'union image world'
+            'dojang image guild'
+            'popularity name .';
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .main-profile .basic_profile .text-box {
+        border-radius: 2.5rem; /* 상대적인 border-radius */
+        background-color: rgba(229, 239, 241, 0.6);
+        backdrop-filter: blur(1rem); /* 상대적인 blur 효과 */
+        color: #3E6076;
+    }
+    
+    .main-profile img {
+        width: auto;
+        height: 100%;
+        max-height: 10rem; /* 상대적인 최대 높이 */
+        filter: drop-shadow(0.125rem 0.125rem 0.03125rem rgba(0, 0, 0, 0.5));
+        border-radius: 50%;
+        align-items: center;
+    }
+    
+    .main-profile .basic_profile #character_name,
+    .main-profile .basic_profile #character_class,
+    .main-profile .basic_profile #character_lv,
+    .main-profile .basic_profile #character_image,
+    .main-profile .basic_profile #character_union,
+    .main-profile .basic_profile #character_dojang,
+    .main-profile .basic_profile #character_popularity,
+    .main-profile .basic_profile #character_guild_name,
+    .main-profile .basic_profile #character_gender,
+    .main-profile .basic_profile #world_name {
+        margin: auto;
+    }
+    
+    .main-profile .basic_profile #character_lv {
+        border-radius: 0 0 0.625rem 0.625rem; /* 상대적인 border-radius */
+    }
+    
+    .main-profile #character_CP {
+        flex-grow: 1;
+
+        background-color: #3E6076;
+        color: #D5EEF2;
+        font-size: 1rem; /* 상대적인 font-size */
+        justify-content: space-between;
+    }
+    
+    .main-profile #character_CP span,
+    .main-profile #character_CP .empty {
+        color: #FFF9D1;
+    }   
 }
