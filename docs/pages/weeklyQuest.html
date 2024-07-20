@@ -1,121 +1,198 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>주간 퀘스트</title>
-    <link rel="stylesheet" href="../assets/css/MidnightChaser.css">
-    <link rel="icon" href="../assets/images/logos/maple_leaf.png" type="image/png">
-</head>
+    <link rel="stylesheet" href="../assets/css/MidnightChaser.css" />
+    <link
+      rel="icon"
+      href="../assets/images/logos/maple_leaf.png"
+      type="image/png"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <figure class="Logo"><a href="../index.html"><img src="../assets/images/logos/Myple_Logo.png" alt="Logo"></a></figure>
-        <!-- for MENU UI -->
-        <div class="header-frame">
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-        </div>
-        <nav class="header-nav">
-            <ul>
-                <li class="active"><a href="#section1">미드나잇 체이서</a></li>
-                <li><a href="#section2">프로택트 에스페라</a></li>
-            </ul>
-        </nav>
+      <figure class="Logo">
+        <a href="../index.html"
+          ><img src="../assets/images/logos/Myple_Logo.png" alt="Logo"
+        /></a>
+      </figure>
+      <!-- for MENU UI -->
+      <div class="header-frame">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li class="active"><a href="#section1">미드나잇 체이서</a></li>
+          <li><a href="#section2">프로택트 에스페라</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="section1" class="midnightChaser">
-            <div class="title-cont">
-                <div class="title-box"><img src="../assets/images/midnightChaser/midnightChaser.hint.clear.0.png"
-                        alt="logo">
-                    <h1 class="title">미드나잇 체이서 도우미</h1>
-                </div>
-                <div class="cnt-cont">
-                    <div class="cnt-txt">
-                        <img src="../assets/images/midnightChaser/midnightChaser.field.clear.png" alt="check">
-                        <h1 class="stage">찾은개수</h1>
-                    </div>
-                    <div class="cnt-inner">
-                        <h1 class="timer"> 4<span>개</span> / 9<span>개</span></h1>
-                    </div>
-                </div>
+      <section id="section1" class="midnightChaser">
+        <div class="title-cont">
+          <div class="title-box">
+            <img
+              src="../assets/images/midnightChaser/midnightChaser.hint.clear.0.png"
+              alt="logo"
+            />
+            <h1 class="title">미드나잇 체이서 도우미</h1>
+          </div>
+          <div class="cnt-cont">
+            <div class="cnt-txt">
+              <img
+                src="../assets/images/midnightChaser/midnightChaser.field.clear.png"
+                alt="check"
+              />
+              <h1 class="stage">찾은개수</h1>
             </div>
-            <div class="board">
-                <h1>BOARD</h1>
-                <div class="board_inner">
-                    <div class="grid-cont">
-                        <div class="obj_box" id="select-1"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-2"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-3"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-4"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-5"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-6"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-7"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-8"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                        <div class="obj_box" id="select-9"><img
-                                src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png" alt="?"></div>
-                    </div>
-                </div>
+            <div class="cnt-inner">
+              <h1 class="timer">4<span>개</span> / 9<span>개</span></h1>
             </div>
-            <aside>
-                <div class="objList">
-                    <div class="board_inner">
-                        <div class="flex-cont">
-                            <div class="obj_box" data-index="1"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.0.png" alt="0">
-                            </div>
-                            <div class="obj_box" data-index="2"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.1.png" alt="1">
-                            </div>
-                            <div class="obj_box" data-index="3"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.2.png" alt="2">
-                            </div>
-                            <div class="obj_box" data-index="4"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.3.png" alt="3">
-                            </div>
-                            <div class="obj_box" data-index="5"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.4.png" alt="4">
-                            </div>
-                            <div class="obj_box" data-index="6"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.5.png" alt="5">
-                            </div>
-                            <div class="obj_box" data-index="7"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.6.png" alt="6">
-                            </div>
-                            <div class="obj_box" data-index="8"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.7.png" alt="7">
-                            </div>
-                            <div class="obj_box" data-index="9"><img
-                                    src="../assets/images/midnightChaser/midnightChaser.hint.object.8.png" alt="8">
-                            </div>
-                        </div>
-                    </div>
+          </div>
+        </div>
+        <div class="board">
+          <h1>BOARD</h1>
+          <div class="board_inner">
+            <div class="grid-cont">
+              <div class="obj_box" id="select-1">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-2">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-3">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-4">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-5">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-6">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-7">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-8">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+              <div class="obj_box" id="select-9">
+                <img
+                  src="../assets/images/midnightChaser/midnightChaser.hint.hide.0.png"
+                  alt="?"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div class="objList">
+            <div class="board_inner">
+              <div class="flex-cont">
+                <div class="obj_box" data-index="1">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.0.png"
+                    alt="0"
+                  />
                 </div>
-            </aside>
-        </section>
-        <section id="section2" class="protectEspera">
-
-        </section>
+                <div class="obj_box" data-index="2">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.1.png"
+                    alt="1"
+                  />
+                </div>
+                <div class="obj_box" data-index="3">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.2.png"
+                    alt="2"
+                  />
+                </div>
+                <div class="obj_box" data-index="4">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.3.png"
+                    alt="3"
+                  />
+                </div>
+                <div class="obj_box" data-index="5">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.4.png"
+                    alt="4"
+                  />
+                </div>
+                <div class="obj_box" data-index="6">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.5.png"
+                    alt="5"
+                  />
+                </div>
+                <div class="obj_box" data-index="7">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.6.png"
+                    alt="6"
+                  />
+                </div>
+                <div class="obj_box" data-index="8">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.7.png"
+                    alt="7"
+                  />
+                </div>
+                <div class="obj_box" data-index="9">
+                  <img
+                    src="../assets/images/midnightChaser/midnightChaser.hint.object.8.png"
+                    alt="8"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+      <section id="section2" class="protectEspera"></section>
     </main>
 
     <footer id="footer-placeholder"></footer>
 
     <!-- JS파일 참조 -->
-    <script src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/api/nexonOpenApi.js"></script>
+    <script type="module" src="../assets/js/main.js"></script>
     <script src="../assets/js/MidnightChaser.js"></script>
-    <script src="https://kit.fontawesome.com/47a5d4bea1.js" crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/47a5d4bea1.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -82,6 +82,8 @@
 #slide-box .slide a img {
     width: 100%;
     height: auto;
+    
+    image-rendering: pixelated;
 
     transition: opacity 0.3s ease;
 }
@@ -103,6 +105,7 @@ button {
 
 button:hover {
     filter: brightness(0.8);
+    scale: 1.2;
 }
 
 #next-btn {
