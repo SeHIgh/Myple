@@ -334,7 +334,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   await includeHTML("footer-placeholder", "../layouts/footer.html");
 
   // Initialize header and footer functions after including the HTML
-  // initializeHeaderFunctions();
+  const header = document.getElementById("header-nav");
+  if(header) initializeHeaderFunctions();
   initializeFooterFunctions();
 
   // Get ocid from query parameters and fetch character data
