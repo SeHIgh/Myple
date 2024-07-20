@@ -1,0 +1,161 @@
+@import url(./layouts.css);
+
+/* Style the tab */
+.slide-section {
+    width: 250px;
+    height: 192px;
+    margin: 0 auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+
+    grid-template-areas:
+        "slide-title slide-title slide-title"
+        "prev-btn slide-view next-btn"
+        ". slide-cur .";
+}
+
+/* title */
+.slide-title {
+    grid-area: slide-title;
+
+    width: 100%;
+    height: 16px;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* slide-box */
+#slide-view {
+    grid-area: slide-view;
+
+    width: 172px;
+    height: 100%;
+
+    padding: 2px;
+
+    background-color: rgba(49, 57, 66, 0.7);
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+#slide-box {
+    width: fit-content;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+/* img : 126px * 98px */
+#slide-box .slide {
+    width: 168px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#slide-box .slide a {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide-box .slide a img {
+    width: 100%;
+    height: auto;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Style the Btn */
+button {
+    width: 30px;
+    height: 100%;
+
+    margin: auto;
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button:hover {
+    filter: brightness(0.8);
+}
+
+#next-btn {
+    grid-area: next-btn;
+
+    width: 22px;
+
+    background-image: url(../images/icons/keyboard_arrow_right_70dp_5F6368_FILL0_wght400_GRAD0_opsz48.svg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prev-btn {
+    grid-area: prev-btn;
+
+    width: 22px;
+
+    background-image: url(../images/icons/keyboard_arrow_left_70dp_5F6368_FILL0_wght400_GRAD0_opsz48.svg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide-cur {
+    grid-area: slide-cur;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide-dot {
+    height: 16px;
+    width: 16px;
+    /* background-color: #bbb; */
+    background-image: url(../images/icons/circle_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg);
+    /* background-size: 100%; */
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 50%;
+}
+
+.slide-dot:hover {
+    scale: 1.2;
+    filter: brightness(0.9);
+    background-color: #BECC70;
+}
+
+.slide-dot.active {
+    scale: 1.2;
+    background-color: #BECC70;
+}
