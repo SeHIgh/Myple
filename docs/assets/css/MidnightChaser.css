@@ -13,17 +13,18 @@ main section {
  
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     gap: 10px;
 
     align-items: center;
 }
 
 main .title-cont {
+    font-family: 'bitbit';
     width: auto;
     border-radius: 10px;
     border: 1px solid #ffffff;
-    padding: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,6 +32,8 @@ main .title-cont {
     color: #fff;
     margin-top: 10px;
     margin-bottom: 10px;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 main .title-cont .title-box {
@@ -49,8 +52,8 @@ main .title-cont .title-box img {
 }
 
 main .title-cont .title-box .title {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: normal;
     color: #fff;
     text-align: center;
 }
@@ -60,23 +63,25 @@ main .title-cont .cnt-cont {
     width: 100%;
     height: 70px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
     background-image: linear-gradient(to bottom, #fff, #2D3443 10%);
     border-radius: 10px;
     border: 3px solid #ffffff;
 }
 
 main .title-cont .cnt-cont .cnt-txt {
-    position: absolute;
-    top: 10px;
-    left: 5px;
     width: auto;
-    height: 20px;
+    height: 100%;
+
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: top;
     gap: 5px;
-    padding: 5px;
 }
 
 main .title-cont .cnt-cont .cnt-txt img {
@@ -87,15 +92,13 @@ main .title-cont .cnt-cont .cnt-txt img {
 }
 
 main .title-cont .cnt-cont .cnt-txt h1 {
-    font-size: 20px;
-    font-weight: 700;
+    margin-top: 3px;
+    font-size: 16px;
+    font-weight: normal;
     color: #fff;
 }
 
 main .title-cont .cnt-cont .cnt-inner {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     width: 65%;
     height: 55px;
     display: flex;
@@ -109,25 +112,26 @@ main .title-cont .cnt-cont .cnt-inner {
 }
 
 main .title-cont .cnt-cont .cnt-inner .timer {
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: normal;
     color: #FBBC05;
     text-align: center;
     flex-grow: 1;
 }
 
 main .title-cont .cnt-cont .cnt-inner .timer span {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: normal;
     color: #fff;
 }
 
 .board {
-    width: 90%;
+    width: 40%;
     max-width: 500px;
-    height: auto;
+    min-width: 300px;
+    height: fit-content;
     /* margin: auto; */
-    padding: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,13 +144,15 @@ main .title-cont .cnt-cont .cnt-inner .timer span {
 
 .board>h1 {
     margin: auto;
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: normal;
     color: #FFCC32;
 }
 
 .board>.board_inner {
-    width: 90%;
+    width: 100%;
     height: auto;
+    aspect-ratio: 1 / 1; /* 정사각형 비율 */
     margin: auto;
     padding: 10px;
     display: flex;
@@ -210,10 +216,12 @@ aside {
 }
 
 .objList {
-    width: auto;
-    height: 90px;
+    width: 80%;
+    height: fit-content;
+
     margin: auto;
-    padding: 2px;
+    padding: 5px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,9 +233,11 @@ aside {
 
 .objList>.board_inner {
     width: 100%;
-    height: 100%;
+    height: fit-content;
+
     margin: auto;
     padding: 5px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -238,25 +248,37 @@ aside {
 }
 
 .objList>.board_inner>.flex-cont {
+    width: 100%;
+    height: fit-content;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: auto;
-    height: auto;
+
+    flex-wrap: wrap;
+    
     gap: 5px;
 }
 
 .flex-cont>.obj_box {
+    width: auto;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
+
     padding: 5px;
+    
     background-image: linear-gradient(to bottom, #000000, #543798);
+    
     font-size: 24px;
-    cursor: pointer;
+    
     border-radius: 10px;
     border: 1px solid #707070;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
+
+    cursor: pointer;
 }
 
 .objList .obj_box img {
