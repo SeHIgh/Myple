@@ -1,6 +1,8 @@
 // 초기 설정: objList 숨기기
 const objList = document.querySelector('.objList');
 objList.style.display = 'none';
+const resetButton = document.querySelector('#resetBtn');
+resetButton.style.display = 'none';
 
 // .board의 obj_box 요소들을 가져옵니다.
 const boardBoxes = document.querySelectorAll('.board .obj_box');
@@ -17,15 +19,23 @@ let previousBorderStyle = null;
 // 타이머 요소를 가져옵니다.
 const timerElement = document.querySelector('.timer');
 
+// 초기 상태를 저장
+const initialBoardState = Array.from(boardBoxes).map(box => box.querySelector('img').src);
+const initialListState = Array.from(listBoxes).map(box => box.style.display);
+
 // 현재 상태를 업데이트하는 함수
 const updateTimer = () => {
     const totalBoxes = boardBoxes.length;
     const changedBoxes = Array.from(boardBoxes).filter(box => !box.querySelector('img').src.includes('midnightChaser.hint.hide.0.png')).length;
     timerElement.innerHTML = `${changedBoxes}<span>개</span> / ${totalBoxes}<span>개</span>`;
+
+    if (changedBoxes > 0) {
+        resetButton.style.display = 'block';
+    }
 };
 
 // .board의 obj_box 요소를 클릭하면 objList를 보이게 합니다.
-boardBoxes.forEach(box => {
+boardBoxes.forEach((box, index) => {
     box.addEventListener('click', (e) => {
         // 클릭 이벤트가 버블링 되지 않도록 합니다.
         e.stopPropagation();
@@ -47,7 +57,7 @@ boardBoxes.forEach(box => {
 });
 
 // objList의 obj_box 요소를 클릭하면 선택된 이미지를 .board의 obj_box에 나타나게 합니다.
-listBoxes.forEach(listBox => {
+listBoxes.forEach((listBox, index) => {
     listBox.addEventListener('click', (e) => {
         // 클릭 이벤트가 버블링 되지 않도록 합니다.
         e.stopPropagation();
@@ -110,5 +120,33 @@ body.addEventListener('click', (e) => {
     }
 });
 
+// 초기 상태로 리셋하는 함수
+const resetGame = () => {
+    // .board의 obj_box 요소들의 이미지를 초기 상태로 복원
+    boardBoxes.forEach((box, index) => {
+        box.querySelector('img').src = initialBoardState[index];
+        box.style.border = '2px solid #707070';
+        box.style.backgroundImage = 'linear-gradient(to bottom, #000000, #543798)';
+    });
+
+    // objList의 obj_box 요소들을 초기 상태로 복원
+    listBoxes.forEach((box, index) => {
+        box.style.display = initialListState[index];
+    });
+
+    // 선택 상태 초기화
+    selectedImageIndex = null;
+    previousBorderStyle = null;
+
+    // 타이머 업데이트
+    updateTimer();
+
+    // 리셋 버튼 숨기기
+    resetButton.style.display = 'none';
+};
+
 // 초기 상태 업데이트
 updateTimer();
+
+// resetButton 클릭 이벤트 추가
+resetButton.addEventListener('click', resetGame);
