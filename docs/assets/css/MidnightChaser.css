@@ -1,36 +1,64 @@
 @import url(./layouts.css);
 
-main{
-    width: 100%;
-    /* main내부 section이 차지하는 공간 만큼 */
-    height: auto;
+body{
+    height: 100vh;
     background-color: #FFCC32;
-}
 
-main section {
-    /* 70px: header height */
-    /* padding-top: 70px; */
- 
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    gap: 10px;
-
-    align-items: center;
-}
-
-main .title-cont {
-    width: auto;
-    border-radius: 10px;
-    border: 1px solid #ffffff;
-    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    gap: 10px;
+}
+
+main{
+    width: 100%;
+    height: 90vh;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+footer {
+    height: 10vh;
+}
+
+main section {
+    width: 100%;
+    height: 100%;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    gap: 10px;
+}
+
+main .title-cont {
+    width: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding: 10px;
+    
+    color: #fff;
+    
+    font-family: 'bitbit';
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 main .title-cont .title-box {
@@ -49,8 +77,8 @@ main .title-cont .title-box img {
 }
 
 main .title-cont .title-box .title {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: normal;
     color: #fff;
     text-align: center;
 }
@@ -58,46 +86,93 @@ main .title-cont .title-box .title {
 main .title-cont .cnt-cont {
     position: relative;
     width: 100%;
-    height: 70px;
+    height: 80px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
     background-image: linear-gradient(to bottom, #fff, #2D3443 10%);
     border-radius: 10px;
     border: 3px solid #ffffff;
 }
 
-main .title-cont .cnt-cont .cnt-txt {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    width: auto;
-    height: 20px;
+main .title-cont .cnt-cont .cnt-box {
+    width: 30%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    gap: 5px;
-    padding: 5px;
 }
 
-main .title-cont .cnt-cont .cnt-txt img {
+main .title-cont .cnt-cont .cnt-box .cnt-txt {
+    width: 100%;
+    height: 35%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+main .title-cont .cnt-cont .cnt-box .cnt-txt img {
     width: 20px;
     height: 20px;
     object-fit: cover;
     display: block;
 }
 
-main .title-cont .cnt-cont .cnt-txt h1 {
-    font-size: 20px;
-    font-weight: 700;
+main .title-cont .cnt-cont .cnt-box .cnt-txt h1 {
+    margin-top: 3px;
+    font-size: 16px;
+    font-weight: normal;
     color: #fff;
 }
 
+main .title-cont .cnt-cont .cnt-box .btn-box {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .title-cont .cnt-cont .cnt-box .btn-box #resetBtn {
+    width: 100%;
+    height: 100%;
+
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    
+    font-family: 'bitbit';
+
+    display: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    cursor: pointer;
+}
+main .title-cont .cnt-cont .cnt-box .btn-box #resetBtn i {
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+main .title-cont .cnt-cont .cnt-box .btn-box #resetBtn:hover i {
+    scale: 1.2;
+    transform: rotate(-360deg);
+}
+main .title-cont .cnt-cont .cnt-box .btn-box #resetBtn span {
+    font-size: 12px;
+}
+
 main .title-cont .cnt-cont .cnt-inner {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     width: 65%;
-    height: 55px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -109,44 +184,52 @@ main .title-cont .cnt-cont .cnt-inner {
 }
 
 main .title-cont .cnt-cont .cnt-inner .timer {
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: normal;
     color: #FBBC05;
     text-align: center;
     flex-grow: 1;
 }
 
 main .title-cont .cnt-cont .cnt-inner .timer span {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: normal;
     color: #fff;
 }
 
 .board {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
-    /* margin: auto; */
-    padding: 5px;
+    width: 40%;
+    max-width: 400px;
+    min-width: 300px;
+    height: fit-content;
+
+    padding: 20px;
+    padding-top: 5px;
+    
+    background-image: linear-gradient(to bottom, #fff, #000000 3%);
+    
+    opacity: 0.9;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, #fff, #000000 3%);
-    opacity: 0.9;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
+    gap: 5px;
 }
 
 .board>h1 {
     margin: auto;
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 100%;
     color: #FFCC32;
 }
 
 .board>.board_inner {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    height: fit-content;
     margin: auto;
     padding: 10px;
     display: flex;
@@ -159,28 +242,37 @@ main .title-cont .cnt-cont .cnt-inner .timer span {
 }
 
 .board>.board_inner>.grid-cont {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1 / 1; /* 정사각형 비율 */  
+    height: fit-content;
     padding: 10px;
+    
     display: grid;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 340px;
+    
     grid-template-columns: repeat(3, minmax(70px, 1fr));
     grid-template-columns: repeat(3, minmax(70px, 1fr));
     gap: 10px;
 }
 
 .grid-cont>.obj_box {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* 정사각형 비율 */
+    padding: 2px;
+
     background-image: linear-gradient(to bottom, #000000, #543798);
-    font-size: 24px;
-    cursor: pointer;
+    
     border-radius: 10px;
     border: 2px solid #707070;
-    position: relative;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
+
+    cursor: pointer;
 }
 
 .grid-cont>.obj_box:hover {
@@ -193,15 +285,15 @@ main .title-cont .cnt-cont .cnt-inner .timer span {
     height: 100%;
     object-fit: cover;
     display: block;
+
+    image-rendering: pixelated;
 }
 
+/* 물체 선택 리스트 */
 aside {
     width: 100%;
-    height: 10vh;
-    /* margin: auto; */
+    height: auto;
     padding: 5px;
-    
-    background-color: #FFCC32;
 
     display: flex;
     flex-direction: column;
@@ -210,197 +302,79 @@ aside {
 }
 
 .objList {
-    width: auto;
-    height: 90px;
+    width: fit-content;
+    height: fit-content;
     margin: auto;
-    padding: 2px;
+    padding: 5px;
+
+    background-image: linear-gradient(to top, #000000, #1E0058);
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to top, #000000, #1E0058);
-    border-radius: 10px;
-    border: 2px solid #FFFFFF;
 }
 
 .objList>.board_inner {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     margin: auto;
-    padding: 5px;
+    padding: 10px;
+
+    background-image: linear-gradient(to top, #000000, #1E0058);
+    border-radius: 8px;
+    border: 1px solid #FFFFFF;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to top, #000000, #1E0058);
-    border-radius: 8px;
-    border: 1px solid #FFFFFF;
 }
 
 .objList>.board_inner>.flex-cont {
+    width: 100%;
+    height: fit-content;
+
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: auto;
-    height: auto;
-    gap: 5px;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    
+    gap: 10px;
 }
 
 .flex-cont>.obj_box {
-    padding: 5px;
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
+
+    padding: 2px;
+    
     background-image: linear-gradient(to bottom, #000000, #543798);
+    
     font-size: 24px;
-    cursor: pointer;
+    
     border-radius: 10px;
     border: 1px solid #707070;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
+
+    cursor: pointer;
 }
 
 .objList .obj_box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+
+    image-rendering: pixelated;
 }
 
 .flex-cont>.obj_box:hover {
     background-image: linear-gradient(to bottom, #523396, #7677C0);
     border: 2px solid #C6A6EA;
 }
-
-/* @media screen and (max-width: 1200px) {
-    main .title-cont .title-box .title {
-        font-size: 26px;
-    }
-
-    main .title-cont .cnt-cont .cnt-txt h1 {
-        font-size: 16px;
-    }
-
-    main .title-cont .cnt-cont .cnt-inner .timer {
-        font-size: 40px;
-    }
-
-    .board>h1 {
-        font-size: 22px;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    header>nav {
-        width: 50%;
-    }
-
-    header>nav>ul>li {
-        font-size: 12px;
-    }
-
-    main .title-cont .title-box .title {
-        font-size: 22px;
-    }
-
-    main .title-cont .cnt-cont .cnt-txt h1 {
-        font-size: 14px;
-    }
-
-    main .title-cont .cnt-cont .cnt-inner .timer {
-        font-size: 35px;
-    }
-
-    .board>h1 {
-        font-size: 20px;
-    }
-
-    .grid-cont>.obj_box {
-        width: auto;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    header>nav {
-        width: 60%;
-    }
-
-    header>nav>ul {
-        flex-direction: column;
-        height: 100%;
-        justify-content: center;
-    }
-
-    header>nav>ul>li {
-        font-size: 12px;
-        width: 100%;
-    }
-
-    main .title-cont .title-box .title {
-        font-size: 20px;
-    }
-
-    main .title-cont .cnt-cont .cnt-txt h1 {
-        font-size: 12px;
-    }
-
-    main .title-cont .cnt-cont .cnt-inner .timer {
-        font-size: 30px;
-    }
-
-    .board>h1 {
-        font-size: 18px;
-    }
-
-    .grid-cont {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-        grid-template-rows: auto;
-    }
-
-    .grid-cont>.obj_box {
-        width: auto;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    header>nav {
-        width: 70%;
-    }
-
-    header>nav>ul>li {
-        font-size: 10px;
-        width: 100%;
-    }
-
-    main .title-cont .title-box .title {
-        font-size: 18px;
-    }
-
-    main .title-cont .cnt-cont .cnt-txt h1 {
-        font-size: 10px;
-    }
-
-    main .title-cont .cnt-cont .cnt-inner .timer {
-        font-size: 25px;
-    }
-
-    .board>h1 {
-        font-size: 16px;
-    }
-
-    .grid-cont {
-        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-        grid-template-rows: auto;
-    }
-
-    .grid-cont>.obj_box {
-        width: auto;
-        height: auto;
-    }
-
-    .flex-cont>.obj_box {
-        width: 50px;
-        height: 50px;
-    }
-} */
