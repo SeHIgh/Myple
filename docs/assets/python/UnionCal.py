@@ -5,6 +5,7 @@ import json
 list_api_endpoint = 'https://open.api.nexon.com/maplestory/v1/character/list'
 # api_key = 'test_cf92cd14930e08e300ab26408fc39a0423307bfeffb68e8601913d93e8ed7f36efe8d04e6d233bd35cf2fabdeb93fb0d'
 api_key = 'test_cf92cd14930e08e300ab26408fc39a04106ffd90a4270419752ce5af9d9627efefe8d04e6d233bd35cf2fabdeb93fb0d'
+# api_key = 'test_f97755b07aef1cef5786568d2a256d1a03b2f7427ea4f0031eab49e5bf2087bfefe8d04e6d233bd35cf2fabdeb93fb0d'
 
 # API 요청을 위한 헤더 설정
 headers = {
@@ -22,7 +23,7 @@ try:
     target_world = '스카니아'
 
     # JobList.json 파일에서 데이터 읽어오기
-    with open('../json/self/jobList.json', 'r', encoding='utf-8') as f:
+    with open('c:/GitHub/Myple/docs/assets/json/self/jobList.json', 'r', encoding='utf-8') as f:
         job_list_data = json.load(f)
 
     # 특정 world_name의 character_class 배열 추출
