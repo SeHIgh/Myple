@@ -263,7 +263,7 @@ footer {
 
 /* FOOTER - EMPTY BOX */
 footer>.empty-box {
-    min-width: 145px;
+    width: 145px;
     height: 100%;
 }
 
@@ -577,11 +577,11 @@ footer>.empty-box {
 @media only screen and (max-width: 599px) {
 
     /* 기본 상태: main-box 보이고 nav 숨김 */
-    #main-box {
+    .main-box {
         transition: transform 0.3s ease;
     }
 
-    #nav {
+    .nav {
         display: none;
         transition: transform 0.3s ease;
     }
